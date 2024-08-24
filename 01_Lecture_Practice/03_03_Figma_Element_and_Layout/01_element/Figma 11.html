@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #background {
+            background-image : url("shop.jpg")
+        }
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <div id="background">
+            <div id="text">인테리어 디자인</div>
+        </div>
+    </div>
+
+    <script>
+        const $frame = document.getElementById("frame");
+        $frame.style.width = "350px"
+        $frame.style.height = "350px"
+        $frame.style.top = "16px"
+        $frame.style.left = "16px"
+
+        const $image = document.getElementById("background");
+        $image.style.width = "350px";
+        $image.style.height = "350px";
+        $image.style.backgroundRepeat = "no-repeat";
+        $image.style.backgroundClip = "cover";
+        $image.style.backgroundPosition = "50%, 80%"
+
+        const $text = document.getElementById("text");
+        $text.style.width = "180px"
+        $text.style.height = "29px"
+        $text.style.fontFamily = "inter"
+        $text.style.fontWeight = "700"
+        $text.style.fontSize = "24px"
+        $text.style.lineHeight = "29.05px"
+        $text.style.color = "#FFFFFF"
+        $text.style.marginLeft = "15px"
+        $text.style.paddingTop = "15px"
+
+    </script>
+</body>
+</html>

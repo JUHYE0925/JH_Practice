@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .season {
+            color : #FFFFFF;
+            display : inline-block;
+            font-size : 24px;
+            font-weight : 700;
+            width : 60px;
+        }
+        #spring {
+            width : 35px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <div id="spring" class="season">봄</div>
+        <div id="summer" class="season">여름</div>
+        <div id="fall" class="season">가을</div>
+        <div id="winter" class="season">겨울</div>
+    </div>
+
+    <script>
+        const $frame = document.getElementById("frame");
+        $frame.style.width = "320px";
+        $frame.style.height = "80px";
+        $frame.style.top = "16px"
+        $frame.style.left = "16px"
+        $frame.style.backgroundColor = "#CA785C";
+
+        const $season = document.querySelector(".season");
+        $season.style.lineHeight = "29.05px";
+        $season.style.marginLeft = "10px";
+        $season.style.marginTop = "25px";
+               
+    </script>
+
+</body>
+</html>

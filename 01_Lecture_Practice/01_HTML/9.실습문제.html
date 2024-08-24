@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제</title>
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <legend>납품자 정보</legend> <br>
+        <ol>
+        <label><li>납품자명 : </li></label> <input type="text"> <br><br>
+        <label><li>email : </li></label><input type="email" value="answer@naver.com"> <br><br>
+        <label><li>홈페이지 : </li></label> <input type="url" value="http://"><br><br>
+        <label><li>지역 : </li></label>
+        <select name="region">
+            <option value="Gwangju">광주</option>
+            <option value="Busan" selected>부산</option>
+            <option value="Seoul">서울</option>
+            <option value="Hanam">하남</option>
+            <option value="Daegu">대구</option>
+        </select><br><br>
+    </ol>
+    </fieldset>
+</form>
+
+<form>
+    <fieldset>
+        <legend>납품 정보</legend>
+        <ul>
+            <label><li>상품명 : </li></label> <input type="text"> <br><br>
+            <label><li>납품수량 : </li></label> <input type="text" placeholder="최소 100"> <br><br>
+            <label><li>납품등급 : </li></label>
+            <input type="range" min="0" max="100" value="50"> <br><br>
+            <label><li>기타사항 : </li></label> <textarea cols="30" rows="10"></textarea> <br><br>
+        </ul>
+    </fieldset>
+</form>
+<br>
+<input type="submit" value="send message">
+<br><br><br>
+
+<hr>
+<br><br><br>
+<form>
+    <label>고객명 : </label> <input type="text"> <br><br>
+    <label>전화번호 : </label> <input type="tel" name="phone"> <br><br>
+    <label>E-mail : </label> <input type="email" name="email"> <br><br>
+    <label>피자선택 : </label>
+    <select name="pizza">
+        <option value="" selected>피자를 선택하세요.</option>
+        <option value="Combination"> 콤비네이션피자</option>
+        <option value="Hawaiian"> 하와이안피자</option>
+        <option value="Pepperoni"> 페퍼로니피자</option>
+        <option value="Cheese"> 치즈피자</option>
+    </select> <br><br>
+
+    <fieldset>
+        <legend>피자 사이즈</legend>
+        <input id="small" type="radio" name="size"><label for="small">Small</label> <br><br>
+        <input id="medium" type="radio" name="size"><label for="medium">Medium</label> <br><br>
+        <input id="large" type="radio" name="size"><label for="large">Large</label> <br><br>
+    </fieldset>
+    <fieldset>
+        <legend>토핑 선택</legend>
+        <input type="checkbox"><label>베이컨</label><br><br>
+        <input type="checkbox"><label>치즈</label><br><br>
+        <input type="checkbox"><label>양파</label><br><br>
+        <input type="checkbox"><label>버섯</label><br><br>
+    </fieldset>
+<br><br>
+    <label>희망배송시간 : </label>
+    <input type="time" name="time"> <br><br>
+    <label>배송시 요청사항 : </label>
+    <textarea cols="20" rows="5"></textarea> <br><br>
+
+    <input type="submit" value="주문하기">
+</form>
+<br><br>
+<hr>
+<br><br>
+<form>
+    <h2>회원가입</h2>
+    <fieldset>
+        <legend>필수 입력 사항</legend>
+        <label><b> ID </b></label> <input type="text" placeholder="아이디 10글자 이내">
+        <input type="submit" value="중복 확인"><br>
+        <label><b> 비밀번호 </b></label> <input type="password" placeholder="영문,숫자,특수문자 포함 8자 이상" style="width : 250px"><br>
+        <label><b> 비밀번호 확인 </b></label><input type="password"><br>
+        <label><b> Email </b></label><input type="email" name="email">
+        <select>
+            <option value="" selected>직접입력</option>
+            <option value="naver">@naver.com</option>
+            <option value="google">@gmail.com</option>
+            <option value="daum">@hanmail.net</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>추가 정보</legend>
+        <label>프로필 사진</label>
+        <input type="file"> <br><br>
+        <label>성별 : </label>
+        <input id="male" type="radio" name="gender"><label for="male">남성</label>
+        <input id="female" type="radio" name="gender"><label for="female">여성</label> <br><br>
+        <label>생년월일 : </label> <input type="date" name="date"> <br><br>
+        <label>취미</label> <br>
+        <input type="checkbox"><label>야구</label>
+        <input type="checkbox"><label>농구</label>
+        <input type="checkbox"><label>축구</label> <br>
+        <input type="checkbox"><label>공부</label>
+        <input type="checkbox"><label>음악감상</label> <br>
+        <input type="checkbox"><label>기타</label> <br><br>
+        <label>자기소개</label> <br>
+        <textarea cols="50" rows="10" style="resize:none;"></textarea>
+    </fieldset>
+    <br>
+    <input type="submit" value="회원가입"> 
+    <input type="reset" value="다시입력"> 
+    <input type="reset" value="이전으로"> 
+
+</form>
+    
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #image {
+            background-image : url("garden.jpg");
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <div id="image"></div>
+        <div id="title" class="block text">인테리어란?
+            <div id="name">김작가</div>
+            <div id="date">2024.01.01</div>
+        </div>
+    </div>
+
+    <script>
+        const $frame = document.getElementById("frame");
+        $frame.style.width = "160px";
+        $frame.style.height = "240px";
+        $frame.style.top = "16px";
+        $frame.style.left = "16px";
+        $frame.style.borderRadius = "4px";
+        $frame.style.backgroundColor = "#CA785C";
+
+        const $image = document.getElementById("image");
+        $image.style.width = "160px";
+        $image.style.height = "172px";
+        $image.style.backgroundSize = "cover";
+        $image.style.backgroundRepeat = "no-repeat";
+        $image.style.backgroundPosition = "60% 60%";
+        $image.style.borderRadius = "4px";
+
+        const $title = document.getElementById("title");
+        $title.style.width = "90px";
+        $title.style.height = "25px";
+        $title.style.fontFamily = "inter";
+        $title.style.fontWeight = "700";
+        $title.style.Size = "16px";
+        $title.style.lineHeight = "19.36px";
+        $title.style.letterSpacing = "-0.5%";
+        $title.style.color = "#FFFFFF";
+        $title.style.marginLeft = "10px";
+        $title.style.marginTop = "5px";
+
+
+        const $name = document.getElementById("name");
+        $name.style.textAlign = "left";
+        $name.style.textTop = "10px";
+        $name.style.marginTop = "20px";
+
+        const $date = document.getElementById("date");
+        $date.style.marginLeft = "60px";
+        $date.style.marginTop = "-20px";
+        
+        
+        
+    </script>
+</body>
+</html>

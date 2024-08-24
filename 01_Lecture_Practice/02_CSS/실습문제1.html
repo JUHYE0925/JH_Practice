@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제1</title>
+    <style>
+        .layout1 {
+            width: 800px;
+            height: 80px;
+            border: none;
+        }
+        #header1 {
+            background-color : blue;
+        }
+        #nav1 {
+            background-color : red;
+            width: 200px;
+            height: 300px;
+            margin-right : -6px;
+            }
+        #section1 {
+            background-color : green;
+            width: 400px;
+            height: 300px;
+        }
+        #section1-article1 {
+            background-color: yellowgreen;
+        }
+        #section1-article2 {
+            background-color : lightpink;
+        }
+        #section1-article3 {
+            background-color: cyan;
+        }
+        #aside1 {
+            background-color: antiquewhite;
+            width: 200px;
+            height: 300px;
+            margin-left : -6px;
+            }
+        #footer1 {
+            background-color: purple;
+            height: 40px;
+        }
+        .inline1 {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .block1 {
+            width: 80%;
+            height: 80px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>페이지 레이아웃 설정 실습 문제 1</h2>
+    <div id="header1" class="layout1">header</div>
+    <div id="nav1" class="layout1 inline1">nav</div>
+    <div id="section1" class="layout1 inline1">
+        section
+        <div id="section1-article1" class="block1 article1">article</div>
+        <div id="section1-article2" class="block1 article1">article</div>
+        <div id="section1-article3" class="block1 article1">article</div>
+    </div>
+    <div id="aside1" class="layout1 inline1">aside</div>
+
+    <div id="footer1" class="layout1">footer</div>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inline-block {
+            display : inline-block;
+            margin-left : 20px;
+            margin-top : 20px;
+        }
+        .text {
+            font-weight: bold;
+            margin-left : 10px;
+            margin-top : 5px;
+        }
+        .inline-block1 {
+            display : inline-block;
+            margin-top: 20px;
+            margin-left: 17px;
+        }
+        .text2 {
+            font-family: "Spoqa Han Sans Neo";
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17.53px;
+            color : #FFFFFF;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+        .inline-block2{
+            display: inline-block;
+        }
+        .text3{
+            margin-top: 300px;
+            margin-left: 10px;
+            padding-top : 10px;
+        }
+        .inline-block3{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 20px;
+            margin-right : 20px;
+        }
+        .block1 {
+            display: block;
+            margin-bottom: 15px;
+        }
+        .block2 {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="head">
+        <div id="type">아우터 | 상의 | 하의 | 신발 | 악세서리 </div>
+        <div id="login">로그인 </div>
+    </div>
+    <script>
+        const $head = document.getElementById("head");
+        $head.style.width = "1920px"
+        $head.style.height = "56px"
+        $head.style.backgroundColor = "#000000"
+
+        const $type = document.getElementById("type");
+        $type.style.color = "#FFFFFF"
+        $type.style.fontSize = "20px"
+        $type.style.verticalAlign = "50px"
+        $type.style.paddingLeft = "20px"
+        $type.style.paddingTop= "15px"
+
+        const $login = document.getElementById("login");
+        $login.style.color = "#FFFFFF"
+        $login.style.fontSize = "20px"
+        $login.style.verticalAlign = "50px"
+        $login.style.paddingLeft = "1820px"
+        $login.style.marginTop= "-30px"
+
+    </script>
+    <div id="body1">
+        <div id="newItem">새로운 아이템!</div>
+        <div class="inline-block">
+            <div id="item1"></div>
+            <div id="text1" class="text">ITEM1</div>
+        </div>
+        <div class="inline-block">
+            <div id="item2" class="block"></div>
+            <div id="text2" class="text">ITEM1</div>
+        </div>
+        <div class="inline-block">
+            <div id="item3" class="block"></div>
+            <div id="text3" class="text">ITEM1</div>
+        </div>
+        <div class="inline-block">
+            <div id="item4" class="block"></div>
+            <div id="text4" class="text">ITEM1</div>
+        </div>
+        <div class="inline-block">
+            <div id="item5" class="block"></div>
+            <div id="text5" class="text">ITEM1</div>
+        </div>
+        <div class="inline-block">
+            <div id="item6" class="block"></div>
+            <div id="text6" class="text">ITEM1</div>
+        </div>
+    </div>
+    <script>
+        const $body1 = document.getElementById("body1");
+        $body1.style.marginLeft = "330px";
+        $body1.style.marginTop = "74px";
+
+        const $newItem = document.getElementById("newItem")
+        $newItem.style.width = "230px"
+        $newItem.style.height = "40px"
+        // $newItem.style.fontFamily = "Spoqa Han Sans Neo"
+        $newItem.style.fontWeight = "800"
+        $newItem.style.fontSize = "34px"
+        $newItem.style.lineHeight = "40.06px"
+        $newItem.style.color = "#000000"
+        $newItem.style.paddingLeft = "20px";
+
+        const $item1 = document.getElementById("item1")
+        $item1.style.width = "180px"
+        $item1.style.height = "180px"
+        $item1.style.borderRadius = "16px"
+        $item1.style.backgroundColor = "#646464"
+
+        const $item2 = document.getElementById("item2")
+        $item2.style.width = "180px"
+        $item2.style.height = "180px"
+        $item2.style.borderRadius = "16px"
+        $item2.style.backgroundColor = "#646464"
+
+        const $item3 = document.getElementById("item3")
+        $item3.style.width = "180px"
+        $item3.style.height = "180px"
+        $item3.style.borderRadius = "16px"
+        $item3.style.backgroundColor = "#646464"
+
+        const $item4 = document.getElementById("item4")
+        $item4.style.width = "180px"
+        $item4.style.height = "180px"
+        $item4.style.borderRadius = "16px"
+        $item4.style.backgroundColor = "#646464"
+
+        const $item5 = document.getElementById("item5")
+        $item5.style.width = "180px"
+        $item5.style.height = "180px"
+        $item5.style.borderRadius = "16px"
+        $item5.style.backgroundColor = "#646464"
+
+        const $item6 = document.getElementById("item6")
+        $item6.style.width = "180px"
+        $item6.style.height = "180px"
+        $item6.style.borderRadius = "16px"
+        $item6.style.backgroundColor = "#646464"
+
+    </script>
+
+    <div id="body2">
+        <div id="title2">새로운 아이템!</div>
+        <div id="area1-1" class="inline-block1">
+            <div id="new1" class="text2">NEW</div>
+            <div id="nip1" class="text2">New Item Pro</div>
+            <div id="price1" class="text2">&#8361;1,550,000부터</div>
+        </div>
+        <div id="area1-2" class="inline-block1">
+            <div id="new2" class="text2">NEW</div>
+            <div id="nip2" class="text2">New Item Pro</div>
+            <div id="price2" class="text2">&#8361;1,550,000부터</div>
+        </div>
+        <div id="area1-3" class="inline-block1">
+            <div id="new3" class="text2">NEW</div>
+            <div id="nip3" class="text2">New Item Pro</div>
+            <div id="price3" class="text2">&#8361;1,550,000부터</div>
+        </div>
+    </div>
+
+    <script>
+        const $body2 = document.getElementById("body2");
+        $body2.style.marginLeft = "330px";
+        $body2.style.marginTop = "50px";
+        
+        const $title2 = document.getElementById("title2");
+        $title2.style.width = "230px"
+        $title2.style.height = "40px"
+        // $title2.style.fontFamily = "Spoqa Han Sans Neo"
+        $title2.style.fontWeight = "800"
+        $title2.style.fontSize = "34px"
+        $title2.style.lineHeight = "40.06px"
+        $title2.style.color = "#000000"
+        $title2.style.paddingLeft = "20px";
+
+        const $area = document.getElementById("area1-1");
+        $area.style.width = "390px"
+        $area.style.height = "400px"
+        $area.style.borderRadius = "16px"
+        $area.style.backgroundColor = "#646464"
+
+        const $area2 = document.getElementById("area1-2");
+        $area2.style.width = "390px"
+        $area2.style.height = "400px"
+        $area2.style.borderRadius = "16px"
+        $area2.style.backgroundColor = "#646464"
+
+        const $area3 = document.getElementById("area1-3");
+        $area3.style.width = "390px"
+        $area3.style.height = "400px"
+        $area3.style.borderRadius = "16px"
+        $area3.style.backgroundColor = "#646464"
+    </script>
+
+    <div id="body3">
+        <div id="title3">새로운 아이템!</div>
+        <div id="area3" class="text2">
+            <div id="area3-1" class="inline-block2">
+                <div class="text3">
+                    <div class="text3-1 free">무료 각인</div>
+                    <div class="text3-2">새로운 2세대 상품</div>
+                    <div class="text3-3">&#8361;359,000</div>
+                </div>
+            </div>
+            <div id="area3-2" class="inline-block2">
+                <div class="text3">
+                    <div class="text3-1 free">무료 각인</div>
+                    <div class="text3-2">새로운 2세대 상품</div>
+                    <div class="text3-3">&#8361;359,000</div>
+                </div>
+            </div>
+            <div id="area3-3" class="inline-block2">
+                <div class="text3">
+                    <div class="text3-1 free">무료 각인</div>
+                    <div class="text3-2">새로운 2세대 상품</div>
+                    <div class="text3-3">&#8361;359,000</div>
+                </div>
+            </div>
+            <div id="area3-4" class="inline-block2">
+                <div class="text3">
+                    <div class="text3-1 free">무료 각인</div>
+                    <div class="text3-2">새로운 2세대 상품</div>
+                    <div class="text3-3">&#8361;359,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const $body3 = document.getElementById("body3");
+        $body3.style.marginLeft = "310px";
+        $body3.style.marginTop = "50px";
+
+        const $title3 = document.getElementById("title3");
+        $title3.style.width = "230px"
+        $title3.style.height = "40px"
+        $title3.style.fontFamily = "Spoqa Han Sans Neo"
+        $title3.style.fontWeight = "800"
+        $title3.style.fontSize = "34px"
+        $title3.style.lineHeight = "40.06px"
+        $title3.style.color = "#000000"
+        $title3.style.paddingLeft = "30px";
+        
+        const $area4 = document.querySelectorAll("#area3 > div");
+        [...$area4].forEach($area4 => $area4.style.width = "290px");
+        [...$area4].forEach($area4 => $area4.style.height = "400px");
+        [...$area4].forEach($area4 => $area4.style.borderRadius = "16px");
+        [...$area4].forEach($area4 => $area4.style.backgroundColor = "#646464");
+        [...$area4].forEach($area4 => $area4.style.marginLeft = "14px");
+        [...$area4].forEach($area4 => $area4.style.marginTop = "10px");
+
+        const $text4 = document.querySelectorAll(".text2 > .text3");
+        [...$text4].forEach($text4 => $text4.style.color = "#FFFFFF");
+        [...$text4].forEach($text4 => $text4.style.fontFamily = "Spoqa Han Sans Neo");
+        [...$text4].forEach($text4 => $text4.style.fontWeight = "700");
+        [...$text4].forEach($text4 => $text4.style.fontSize = "16px");
+        [...$text4].forEach($text4 => $text4.style.lineHeight = "20.03px");
+
+        const $text4_1 = document.querySelectorAll(".text3 > .text3-1");
+        [...$text4_1].forEach($text4_1 => $text4_1.style.marginLeft = "10px");
+        [...$text4_1].forEach($text4_1 => $text4_1.style.marginTop = "-10px");
+        [...$text4_1].forEach($text4_1 => $text4_1.style.fontWeight = "300");
+
+        const $text4_2 = document.querySelectorAll(".text3 > .text3-2");
+        [...$text4_2].forEach($text4_2 => $text4_2.style.marginTop = "5px");
+        [...$text4_2].forEach($text4_2 => $text4_2.style.marginLeft = "10px");
+
+        const $text4_3 = document.querySelectorAll(".text3 > .text3-3");
+        [...$text4_3].forEach($text4_3 => $text4_3.style.marginTop = "15px");
+        [...$text4_3].forEach($text4_3 => $text4_3.style.marginLeft = "10px");
+    </script>
+
+    <div id="body4">
+        <div id="title4">새로운 아이템!</div>
+        <div id="area5">
+            <div class="inline-block3">
+                <div class="area5-1 block1">
+                    <div class="text5">새로운 상품들을 만나보세요!</div>
+                </div>
+                <div class="area5-1 block1">
+                    <div class="text5">새로운 상품들을 만나보세요!</div>
+                </div>
+            </div>
+            <div class="inline-block3">
+                <div class="area5-1 block2">
+                    <div class="text5">새로운 상품들을 만나보세요!</div>
+                </div>
+                <div class="area5-1 block2">
+                    <div class="text5">새로운 상품들을 만나보세요!</div>
+                </div>
+            </div>
+            <div class="area5-2 inline-block3"></div>
+        </div>
+    </div>
+
+    <script>
+        const $body4 = document.getElementById("body4");
+        $body4.style.marginLeft = "340px";
+        $body4.style.marginTop = "50px";
+
+        const $title4 = document.getElementById("title4");
+        $title4.style.width = "230px"
+        $title4.style.height = "40px"
+        $title4.style.fontFamily = "Spoqa Han Sans Neo"
+        $title4.style.fontWeight = "800"
+        $title4.style.fontSize = "34px"
+        $title4.style.lineHeight = "40.06px"
+        $title4.style.color = "#000000"
+        $title4.style.paddingLeft = "10px";
+
+        const $area5_1 = document.querySelectorAll(".inline-block3 > .area5-1");
+        [...$area5_1].forEach($area5_1 => $area5_1.style.width = "285px");
+        [...$area5_1].forEach($area5_1 => $area5_1.style.height = "200px");
+        [...$area5_1].forEach($area5_1 => $area5_1.style.borderRadius = "16px");
+        [...$area5_1].forEach($area5_1 => $area5_1.style.backgroundColor = "#646464");
+        // [...$area5_1].forEach($area5_1 => $area5_1.style.marginLeft = "14px");
+        // [...$area5_1].forEach($area5_1 => $area5_1.style.marginTop = "10px");
+
+        const $area5_2 = document.querySelectorAll("#area5 > .area5-2");
+        [...$area5_2].forEach($area5_2 => $area5_2.style.width = "600px");
+        [...$area5_2].forEach($area5_2 => $area5_2.style.height = "416px");
+        [...$area5_2].forEach($area5_2 => $area5_2.style.borderRadius = "16px");
+        [...$area5_2].forEach($area5_2 => $area5_2.style.backgroundColor = "#646464");
+
+        const $text5 = document.querySelectorAll(".text5");
+        [...$text5].forEach($text5 => $text5.style.color = "#FFFFFF");
+        [...$text5].forEach($text5 => $text5.style.fontFamily = "Spoqa Han Sans Neo");
+        [...$text5].forEach($text5 => $text5.style.fontWeight = "700");
+        [...$text5].forEach($text5 => $text5.style.fontSize = "16px");
+        [...$text5].forEach($text5 => $text5.style.lineHeight = "20.03px");
+        [...$text5].forEach($text5 => $text5.style.marginLeft = "15px");
+        [...$text5].forEach($text5 => $text5.style.paddingTop = "15px");
+        [...$text5].forEach($text5 => $text5.style.width = "180px");
+    </script>
+
+    <div id="body5">
+        <div id="title5">빠른 링크</div>
+        <div class="area6">
+            <div class="text6">ITEM</div>
+        </div>
+        <div class="area6">
+            <div class="text6">ITEM</div>
+        </div>
+        <div class="area6">
+            <div class="text6">ITEM</div>
+        </div>
+        <div class="area6">
+            <div class="text6">ITEM</div>
+        </div>
+    </div>
+    <script>
+        const $body5 = document.getElementById("body5");
+        $body5.style.marginLeft = "340px";
+        $body5.style.marginTop = "50px";
+
+        const $title5 = document.getElementById("title5");
+        $title5.style.width = "230px"
+        $title5.style.height = "40px"
+        $title5.style.fontFamily = "Spoqa Han Sans Neo"
+        $title5.style.fontWeight = "800"
+        $title5.style.fontSize = "34px"
+        $title5.style.lineHeight = "40.06px"
+        $title5.style.color = "#000000"
+        // $title5.style.paddingLeft = "10px";
+
+        const $area6 = document.querySelectorAll(".area6");
+        [...$area6].forEach($area6 => $area6.style.width = "150px");
+        [...$area6].forEach($area6 => $area6.style.height = "80px");
+        [...$area6].forEach($area6 => $area6.style.borderRadius = "999px");
+        [...$area6].forEach($area6 => $area6.style.backgroundColor = "#646464");
+        [...$area6].forEach($area6 => $area6.style.display = "inline-block");
+        [...$area6].forEach($area6 => $area6.style.marginTop = "20px");
+        [...$area6].forEach($area6 => $area6.style.marginRight = "30px");
+
+        const $text6 = document.querySelectorAll(".text6");
+        [...$text6].forEach($text6 => $text6.style.color = "#FFFFFF");
+        [...$text6].forEach($text6 => $text6.style.fontFamily = "Spoqa Han Sans Neo");
+        [...$text6].forEach($text6 => $text6.style.fontWeight = "700");
+        [...$text6].forEach($text6 => $text6.style.fontSize = "20px");
+        [...$text6].forEach($text6 => $text6.style.lineHeight = "17.53px");
+        [...$text6].forEach($text6 => $text6.style.marginLeft = "50px");
+        [...$text6].forEach($text6 => $text6.style.marginTop = "30px");
+    </script>
+    
+    <div id="body6">
+        <div id="title6">NEW 트렌드!</div>
+        <div id="area7">
+            <div class="area7 inline-block4">
+                <div class="circle"></div>
+                <div class="start">START!</div>
+                <div class="Lorem">새로운 로렘</div>
+                <div class="lorem">@Lorem</div>
+            </div>
+            <div class="area7 inline-block4">
+                <div class="circle"></div>
+                <div class="start">START!</div>
+                <div class="Lorem">새로운 로렘</div>
+                <div class="lorem">@Lorem</div>
+            </div>
+            <div class="area7 inline-block4">
+                <div class="circle"></div>
+                <div class="start">START!</div>
+                <div class="Lorem">새로운 로렘</div>
+                <div class="lorem">@Lorem</div>
+            </div>
+            <div class="area7 inline-block4">
+                <div class="circle"></div>
+                <div class="start">START!</div>
+                <div class="Lorem">새로운 로렘</div>
+                <div class="lorem">@Lorem</div>
+            </div>
+            <div class="area7 inline-block4">
+                <div class="circle"></div>
+                <div class="start">START!</div>
+                <div class="Lorem">새로운 로렘</div>
+                <div class="lorem">@Lorem</div>
+            </div>
+            <div class="area7 inline-block4">
+                <div class="circle"></div>
+                <div class="start">START!</div>
+                <div class="Lorem">새로운 로렘</div>
+                <div class="lorem">@Lorem</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const $body6 = document.getElementById("body6");
+        $body6.style.marginLeft = "340px";
+        $body6.style.marginTop = "50px";
+
+        const $title6 = document.getElementById("title6");
+        $title6.style.width = "230px"
+        $title6.style.height = "40px"
+        $title6.style.fontFamily = "Spoqa Han Sans Neo"
+        $title6.style.fontWeight = "800"
+        $title6.style.fontSize = "34px"
+        $title6.style.lineHeight = "40.06px"
+        $title6.style.color = "#000000"
+        // $title6.style.paddingLeft = "10px";
+
+        const $area7 = document.querySelectorAll(".area7");
+        [...$area7].forEach($area7 => $area7.style.width = "190px");
+        [...$area7].forEach($area7 => $area7.style.height = "240px");
+        [...$area7].forEach($area7 => $area7.style.borderRadius = "16px");
+        [...$area7].forEach($area7 => $area7.style.backgroundColor = "#646464");
+        [...$area7].forEach($area7 => $area7.style.display = "inline-block");
+        [...$area7].forEach($area7 => $area7.style.marginTop = "20px");
+        [...$area7].forEach($area7 => $area7.style.marginRight = "9px");
+
+        const $circle = document.querySelectorAll(".circle");
+        [...$circle].forEach($circle => $circle.style.width = "24px");
+        [...$circle].forEach($circle => $circle.style.height = "24px");
+        [...$circle].forEach($circle => $circle.style.borderRadius = "999px");
+        [...$circle].forEach($circle => $circle.style.backgroundColor = "#FFFFFF");
+        [...$circle].forEach($circle => $circle.style.marginTop = "20px");
+        [...$circle].forEach($circle => $circle.style.marginLeft = "20px");
+
+        const $text7_1 = document.querySelectorAll(".start");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.color = "#FFFFFF");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.fontFamily = "Spoqa Han Sans Neo");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.fontWeight = "700");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.fontSize = "14px");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.lineHeight = "17.53px");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.marginLeft = "20px");
+        [...$text7_1].forEach($text7_1 => $text7_1.style.marginTop = "100px");
+
+        const $text7_2 = document.querySelectorAll(".Lorem");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.color = "#FFFFFF");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.fontFamily = "Spoqa Han Sans Neo");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.fontWeight = "700");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.fontSize = "20px");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.lineHeight = "17.53px");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.marginLeft = "20px");
+        [...$text7_2].forEach($text7_2 => $text7_2.style.marginTop = "10px");
+
+        const $text7_3 = document.querySelectorAll(".lorem");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.color = "#FFFFFF");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.fontFamily = "Spoqa Han Sans Neo");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.fontWeight = "700");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.fontSize = "14px");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.lineHeight = "17.53px");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.marginLeft = "20px");
+        [...$text7_3].forEach($text7_3 => $text7_3.style.marginTop = "20px");
+    </script>
+
+    <div id="foot">
+        <div id="copyright">Copyright © 2021</div>
+    </div>
+    <script>
+        const $foot = document.getElementById("foot");
+        $foot.style.width = "1920px"
+        $foot.style.height = "56px"
+        $foot.style.backgroundColor = "#000000"
+        $foot.style.marginTop = "100px"
+
+        const $copy = document.getElementById("copyright");
+        $copy.style.color = "#FFFFFF"
+        $copy.style.fontSize = "20px"
+        $copy.style.verticalAlign = "50px"
+        $copy.style.paddingLeft = "900px"
+        $copy.style.paddingTop= "15px"
+    </script>
+
+</body>
+</html>

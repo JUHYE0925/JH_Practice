@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height : 300px;
+            border : 1px solid black;
+        }
+
+        .innerClick1 {background-color: lightpink;}
+        .innerClick2{background-color: rgb(210, 188, 110);}
+    </style>
+</head>
+<body>
+    <h3>1. 화면 어느곳이든 클릭했을 때 클릭한 좌표를 화면과 콘솔에 나타나게 하시요.</h3>
+
+        <h5 class="outerClick">아무 곳이나 클릭세요.</h5>
+
+        <script>
+            const $outerClick = document.querySelector(".outerClick");
+
+            function outer(n){
+                console.log(n);
+                $outerClick.textContent= `X : ${n.clientX}, Y : ${n.clientY}`;
+                console.log(`X : ${n.clientX}, Y : ${n.clientY}`);
+
+            };
+            document.onclick = outer;
+        </script>
+
+    <h3>2. 아래의 div 태그 내에서 클릭했을 때 클릭한 좌표를 화면과 콘솔에 나타나게 하시요.</h3>
+
+    <div class="innerClick1">아무 곳이나 클릭하시요.</div>
+
+    <script>
+        const $innerClick1 = document.querySelector(".innerClick1");
+
+        $innerClick1.onclick = function(n) {
+            console.log(n);
+            $innerClick1.textContent = ` X : ${n.clientX}, Y : ${n.clientY}`;
+            console.log(`X : ${n.clientX}, Y : ${n.clientY}`);
+        };
+    </script>
+
+    <br><br><br>
+
+
+    <div class="innerClick2" onClick="innerClick2(event)">아무 곳이나 클릭하시요.</div>
+
+    <script>
+        const $innerClick2 = document.querySelector(".innerClick2");
+
+        $innerClick2.onclick = function(n) {
+            console.log(n);
+            $innerClick2.textContent = ` X : ${n.clientX}, Y : ${n.clientY}`;
+            console.log(`X : ${n.clientX}, Y : ${n.clientY}`);
+        };
+    </script>
+</body>
+</html>

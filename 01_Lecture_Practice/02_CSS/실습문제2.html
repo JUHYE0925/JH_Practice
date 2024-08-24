@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 2</title>
+    <style>
+        .layout{
+            width: 800px;
+            height:80px;
+            border:none;
+        }
+        #header {
+            background-color : blue;
+        }
+        #nav {
+            background-color : red;
+            width:600px;
+            height:40px;
+            margin: 20px auto -20px;
+        }
+        #section {
+            background-color : green;
+            width : 600px;
+            height: 400px;
+        }
+        #article1 {
+            background-color : yellowgreen;
+        }
+        #article2 {
+            background-color : lightpink;
+        }
+        #article3 {
+            background-color : cyan;
+        }
+        #aside {
+            background-color : antiquewhite;
+            width : 200px;
+            height: 400px;
+            margin-left : -6px;
+        }
+        #footer {
+            background-color : purple;
+            height:40px;
+        }
+        .article {
+            width: 400px;
+            height : 120px;
+            margin : auto;
+        }
+        .inline-block {
+            display:inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h2>페이지 레이아웃 설정 실습 문제 2</h2>
+    <div id="header" class="layout">header
+        <div id="nav" class="layout">nav</div>
+    </div>
+    <div id="section" class="layout inline-block">section
+        <div id="article1" class="article">article</div>
+        <div id="article2" class="article">article</div>
+        <div id="article3" class="article">article</div>
+    </div>
+    <div id="aside" class="layout inline-block">aside</div>
+    <div id="footer" class="layout">footer</div>
+</body>
+</html>

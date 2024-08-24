@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            display : block;
+        }
+    </style>
+</head>
+<body>
+    <div id="profile">
+        <div id="rectangle" class="block"></div>
+        <span id="text" class="block">프로필</span>
+    </div>
+
+
+    <script>
+        const $profile = document.getElementById("profile");
+        $profile.style.width = "160px";
+        $profile.style.height = "195px";
+        $profile.style.top = "16px";
+        $profile.style.left = "16px";
+        $profile.style.gap = "16px";
+        $profile.style.backgroundColor = "gray";
+        // $profile의 영역 범위를 가시적으로 볼 수 있도록 임의로 색상 지정
+
+        const $rectacgle = document.getElementById("rectangle");
+        $rectacgle.style.width = "160px";
+        $rectacgle.style.height = "160px";
+        $rectacgle.style.borderRadius = "9999px";
+        $rectacgle.style.backgroundColor = "#CA785C";
+        
+
+        const $text = document.getElementById("text");
+        $text.style.width = "60px";
+        $text.style.height = "19px";
+        $text.style.fontFamily = "inter";
+        $text.style.fontWeight = "700";
+        $text.style.fontSize = "16px";
+        $text.style.lineHeight = "19.36px";
+        $text.style.color = "#000000";
+        $text.style.marginLeft = "55px";
+        $text.style.marginTop = "10px";
+
+    </script>
+</body>
+</html>

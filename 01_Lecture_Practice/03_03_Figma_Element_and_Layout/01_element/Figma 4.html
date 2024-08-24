@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="frame"></div>
+    <!-- <span id="text">안녕하세요.</span> -->
+
+    <p id="text">안녕하세요!</p>
+
+    <script>
+        const $frame = document.getElementById("frame");
+        $frame.style.backgroundColor = "#CA785C";
+        $frame.style.width = "278px";
+        $frame.style.height = "160px";
+        $frame.style.top = "16px";
+        $frame.style.left = "16px";
+        $frame.style.borderRadius = "8px";
+
+        const $text = document.getElementById("text");
+        $text.style.fontWeight = "600";
+        $text.style.size = "16px";
+        $text.style.lineHeight = "19.36px";
+        $text.style.fontFamily = "inter";
+        // $text.textContent = "안녕하세요!"
+        // $text.style.width = "79px";
+        // $text.style.height = "19px";
+        // $text.style.top = "192px";
+        // $text.style.left = "16px";
+        $text.style.color = "#000000"
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <ul id="fruits">
+        <li class="fruit apple">사과</li>
+        <li class="fruit banana">바나나</li>
+        <li class="fruit orange">오렌지</li>
+    </ul>
+
+    <ul id="vegetables">
+        <li class="vegetable carrot">당근</li>
+        <li class="vegetable broccoli">브로콜리</li>
+    </ul>
+
+    <script>
+        //문제 1: 'fruit' 클래스를 가진 모든 요소를 선택하고 배경색을 yellow로 변경하시오.
+
+        const $fruit = document.querySelectorAll(".fruit");
+        [...$fruit].forEach(fruit => fruit.style.backgroundColor = "yellow");
+
+        //문제 2: 'fruit apple' 클래스를 가진 요소를 선택하여 글자 색을 green으로 변경하시오.
+        const $fruits = document.getElementById("fruits");
+        const $fruitApple = $fruits.querySelector(".apple");
+        $fruitApple.style.color = "green";
+
+        //문제 3: id가 'vegetables'인 요소의 자식 노드들 중 'vegetable' 클래스를 가진 모든 요소를 선택하고, 글자 색을 purple로 변경하시오.
+
+        const $vegetables = document.getElementById("vegetables");
+        console.log($vegetables);
+        const $vegChildren = $vegetables.children;
+        console.log($vegChildren);
+        [...$vegChildren].forEach(vegChildren => vegChildren.style.color = "purple");
+
+        //문제 4: class 이름이 'nonexistent'인 요소를 찾고, "이 요소가 존재하지 않음"을 콘솔에 출력하시오.
+
+        const $noExistent = document.getElementsByClassName("nonexistent");
+        console.log($noExistent);
+        $noExistent.textContent = "이 요소가 존재하지 않음.";
+
+
+    </script>
+</body>
+</html>

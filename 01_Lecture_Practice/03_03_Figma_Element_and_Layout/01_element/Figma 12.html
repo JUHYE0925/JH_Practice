@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #background {
+            background-image : url("shop.jpg")
+        }
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <div id="background">
+            <div id="text">인테리어 디자인</div>
+            <div id="green"></div>
+            <div id="blue"></div>
+            <div id="pink"></div>
+            
+        </div>
+    </div>
+
+    <script>
+        const $frame = document.getElementById("frame");
+        $frame.style.width = "350px"
+        $frame.style.height = "350px"
+        $frame.style.top = "16px"
+        $frame.style.left = "16px"
+
+        const $image = document.getElementById("background");
+        $image.style.width = "350px";
+        $image.style.height = "350px";
+        $image.style.backgroundRepeat = "no-repeat";
+        $image.style.backgroundClip = "cover";
+        $image.style.backgroundPosition = "50%, 80%"
+
+        const $text = document.getElementById("text");
+        $text.style.width = "180px"
+        $text.style.height = "29px"
+        $text.style.fontFamily = "inter"
+        $text.style.fontWeight = "700"
+        $text.style.fontSize = "24px"
+        $text.style.lineHeight = "29.05px"
+        $text.style.color = "#FFFFFF"
+        $text.style.marginLeft = "15px"
+        $text.style.paddingTop = "15px"
+
+        const $green = document.getElementById("green");
+        $green.style.width = "32px"
+        $green.style.height = "32px"
+        $green.style.borderRadius = "999px"
+        $green.style.backgroundColor = "#E3FF92"
+        $green.style.marginTop = "-30px"
+        $green.style.marginLeft = "300px"
+
+
+        const $blue = document.getElementById("blue");
+        $blue.style.width = "32px"
+        $blue.style.height = "32px"
+        $blue.style.borderRadius = "999px"
+        $blue.style.backgroundColor = "#92F8FF"
+        $blue.style.marginTop = "255px"
+        $blue.style.marginLeft = "15px"
+
+
+
+        const $pink = document.getElementById("pink");
+        $pink.style.width = "32px"
+        $pink.style.height = "32px"
+        $pink.style.borderRadius = "999px"
+        $pink.style.backgroundColor = "#FF9292"
+        $pink.style.marginTop = "-32px"
+        $pink.style.marginLeft = "300px"
+
+
+    </script>
+</body>
+</html>

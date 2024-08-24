@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inline-block {
+            display : inline-block;
+            margin-right: 10px;
+            border-radius: 16px;
+        }
+        .block {
+            display : block;
+            margin-top: 20px;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="head"></div>
+    <div id="title1" class="inline-block"></div>
+    <div class="inline-block">
+        <div id="title2" class="block"></div>
+        <div id="title3" class="block"></div>
+    </div>
+    <div id="foot"></div>
+
+    <script>
+        const $head = document.getElementById("head");
+        $head.style.width = "1920px"
+        $head.style.height = "60px"
+        $head.style.backgroundColor = "#343434"
+
+        const $title1 = document.getElementById("title1");
+        $title1.style.width = "1000px"
+        $title1.style.height = "240px"
+        $title1.style.backgroundColor = "#343434"
+        $title1.style.marginLeft = "200px"
+        $title1.style.marginTop = "100px"
+
+        const $title2 = document.getElementById("title2");
+        $title2.style.width = "500px"
+        $title2.style.height = "110px"
+        $title2.style.backgroundColor = "#343434"
+        
+
+        const $title3 = document.getElementById("title3");
+        $title3.style.width = "500px"
+        $title3.style.height = "110px"
+        $title3.style.backgroundColor = "#343434"
+        
+
+        const $foot = document.getElementById("foot");
+        $foot.style.width = "1920px"
+        $foot.style.height = "60px"
+        $foot.style.backgroundColor = "#343434"
+        $foot.style.marginTop = "1080px"
+
+
+    </script>
+</body>
+</html>

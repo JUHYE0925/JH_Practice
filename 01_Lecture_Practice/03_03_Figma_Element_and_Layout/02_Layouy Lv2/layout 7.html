@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border-radius: 8px;
+        }
+
+        .inline-block {
+            display: inline-block;
+            margin-right : 20px
+        }
+
+        .block {
+            display: block;
+            margin-top : 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area1" class = inline-block></div>
+    <div class="inline-block">
+        <div id="area2" class="block"></div>
+        <div id="area3" class="block"></div>
+    </div>
+
+    <script>
+        const $area1 = document.getElementById("area1")
+        $area1.style.width = "572px"
+        $area1.style.height = "344px"
+        $area1.style.top = "4px"
+        $area1.style.left = "4px"
+        $area1.style.backgroundColor = "#FF9B9B"
+
+        const $area2 = document.getElementById("area2")
+        $area2.style.width = "278px"
+        $area2.style.height = "160px"
+        $area2.style.top = "4px"
+        $area2.style.left = "4px"
+        $area2.style.backgroundColor = "#FF9B9B"
+
+        const $area3 = document.getElementById("area3")
+        $area3.style.width = "278px"
+        $area3.style.height = "160px"
+        $area3.style.top = "4px"
+        $area3.style.left = "4px"
+        $area3.style.backgroundColor = "#CA785C"
+
+        
+    </script>
+</body>
+</html>

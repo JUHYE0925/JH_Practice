@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>라디오 버튼을 클릭하면 value 값을 이용해 해당 사이트로 이동해주세요.</h4>
+    <h5>(location.href 이용)</h5>
+    
+    <label for="naver"></label>
+    <input id="naver" type="radio" value="https://www.naver.com">네이버</input><br>
+    <label for="google"></label>
+    <input id="google" type="radio" value="https://www.google.com">구글</input><br>
+    <label for="w3school"></label>
+    <input id="w3schools" type="radio" value="https://www.w3schools.com/">w3schools</input><br>
+
+    <script>
+        const $toNaver = document.getElementById("naver");
+        $toNaver.addEventListener('click', () => {
+            location.href = $toNaver.value
+        });
+
+        document.getElementById("google").onclick = () => location.href = "https://www.google.com"
+
+        const $toW3school = document.getElementById("w3schools");
+        $toW3school.addEventListener('click', () => location.href = $toW3school.value);
+    
+        
+    </script>
+</body>
+</html>

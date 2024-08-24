@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #empty {
+            border-left: 1px;
+            border-right: 1px;
+            border-top: 0px;
+            border-bottom: 1px;
+            border-style : solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="fullframe">
+        <div id="pink"></div>
+        <div id="empty">
+            <div id="hello">안녕하세요. 텍스트입니다.</div>
+            <div id="partframe">
+                <div id="circle"></div>
+                <div id="name"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const $full = document.getElementById("fullframe");
+        $full.style.width = "250px"
+        $full.style.height = "225px"
+        $full.style.top = "16px"
+        $full.style.left = "16px"
+
+        const $pink = document.getElementById("pink");
+        $pink.style.width = "250px"
+        $pink.style.height = "150px"
+        $pink.style.borderRadius = "8px 8px 0px 0px";
+        $pink.style.backgroundColor = "#FFB9B9"
+
+        const $empty = document.getElementById("empty");
+        $empty.style.width = "248px"
+        $empty.style.height = "75px"
+        $empty.style.borderColor = "#FFB9B9";
+
+        const $hello = document.getElementById("hello");
+        $hello.style.width = "150px"
+        $hello.style.height = "15px"
+        $hello.style.fontFamily = "inter"
+        $hello.style.fontWeight = "400"
+        $hello.style.fontSize = "12px"
+        $hello.style.lineHeight = "14.52px"
+        $hello.style.marginLeft = "10px"
+        $hello.style.paddingTop = "10px"
+
+        const $circle = document.getElementById("circle");
+        $circle.style.width = "24px"
+        $circle.style.height = "24px"
+        $circle.style.borderRadius = "999px"
+        $circle.style.backgroundColor = "#D9D9D9"
+        $circle.style.marginLeft = "10px"
+        $circle.style.marginTop = "15px"
+
+        const $name = document.getElementById("name")
+        $name.style.width = "40px"
+        $name.style.height = "15px"
+        $name.textContent = "휴양조"
+        $name.style.familyFont = "inter"
+        $name.style.fontWeight = "400"
+        $name.style.fontSize = "12px"
+        $name.style.lineHeight = "14.52px"
+        $name.style.marginLeft = "45px"
+        $name.style.marginTop = "-20px"
+
+    </script>
+</body>
+</html>

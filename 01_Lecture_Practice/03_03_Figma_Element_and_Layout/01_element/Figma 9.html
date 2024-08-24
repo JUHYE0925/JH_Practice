@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="frame">
+        <div id="text">한여름</div>
+    </div>
+
+    <script>
+        const $frame = document.getElementById("frame");
+        $frame.style.width = "278px";
+        $frame.style.height = "80px";
+        $frame.style.top = "16px"
+        $frame.style.left = "16px"
+        $frame.style.backgroundColor = "#CA785C";
+
+        const $text = document.getElementById("text");
+        $text.style.width = "80px";
+        $text.style.height = "29px";
+        $text.style.top = "26px";
+        $text.style.left = "16px";
+        $text.style.margin = "0 auto";
+        $text.style.paddingTop = "25px" // 왜 marginTop이 아닌 paddingTop인가?
+        $text.style.fontFamily = "inter";
+        $text.style.fontWeight = "700";
+        $text.style.fontSize = "24px";
+        $text.style.lineHeight = "29.05px";
+        $text.style.color = "#FFFFFF";
+    </script>
+</body>
+</html>

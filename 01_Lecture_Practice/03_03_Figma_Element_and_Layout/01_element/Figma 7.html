@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            display: block;
+        }
+
+        #image {
+            background-image : url("roompicture.jpg");
+            background-size : cover;
+            background-position: 50% 50%;
+            background-repeat : no-repeat;
+            border-radius : 8px;
+        }
+
+        #text {
+            font-family : "inter";
+            font-size: 16px;
+            font-weight : 700;
+            color : #FFFFFF;
+            line-height : 19.36%;
+        }
+    </style>
+</head>
+<body>
+    <div id="frame1">
+        <div id="image" class="block"></div>
+        <p id="text" class="block">안녕하세요!</p>
+    </div>
+    <!-- <div id="frame1"></div>
+    <span id="text">안녕하세요!</span>
+    <div id="image"></div>
+     -->
+
+    <script>
+        const $frame1 = document.getElementById("frame1");
+        $frame1.style.width = "278px";
+        $frame1.style.height = "160px";
+        $frame1.style.top = "16px";
+        $frame1.style.left = "16px";
+        $frame1.style.borderRadius = "8px";
+        $frame1.style.backgroundColor = "#CA785C";
+
+        const $image = document.querySelector("#image");
+        $image.style.width = "278px";
+        $image.style.height = "120px";
+
+        const $text = document.getElementById("text");
+        $text.style.width = "100px";
+        $text.style.height = "19px";
+        $text.style.marginLeft = "10px";
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .word {
+            width : 100px;
+            height : 100px;
+            border : 1px solid black
+        }
+    </style>
+</head>
+<body>
+    <h1>연습 문제 1.</h1>
+    <h3> 1. 스프레드 문법을 사용하여 다음과 같이 만들어라.</h3>
+    <h3> 2. 그 후 "검정색"을 "검정색 싫어"로 변경하여라.</h3>
+
+    <div id="area1" class="word">영역1
+        <p>흰색</p>
+    </div>
+
+    <div id="area2" class="word">영역2
+        <p id="area3">검정색</p>
+    </div>
+
+    <script>
+        const $area1 = document.getElementById("area1");
+        $area1.style.backgroundColor = "red";
+
+        const $word = $area1.getElementsByTagName("p");
+        [...$word].forEach(word => word.style.color = "white");
+
+        const $area2 = document.getElementById("area2");
+        $area2.style.backgroundColor = "yellow";
+
+        const $changeColor = $area2.getElementsByTagName("p");
+        [...$changeColor].forEach(changeColor => changeColor.style.color = "blue");
+
+
+        const $changeWord = document.getElementById("area3");
+        const $textChange = $changeWord.firstChild;
+        $textChange.nodeValue = "검정색 싫어";     
+        
+    </script>
+</body>
+</html>
