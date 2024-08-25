@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>240825 연습문제</title>
+</head>
+<body>
+	<h3>연습문제 1</h3>
+	<h4>사용자에게 입력받은 두 수의 값이 같으면 곱하고 다르면 더하는 sumMulti()함수를 작성하세요.</h4>
+	<script>
+		function sumMulti(x,y){
+			if(x === y){
+				console.log(x*y);
+			}
+			else{
+				console.log(x+y);
+			}
+		};
+		sumMulti(5,7);
+		sumMulti(5,5);
+	</script>
+	<br><br>
+	<h3>연습문제 2</h3>
+	<h4>프롬프트 창에서 두 수를 입력 받아 크기를 서로 비교하여 더 큰 숫자를 알림 창에 표시하는 함수를 작성하고 다음과 같이 실행해보세요.</h4>
+  <script>
+	let num1 = parseInt(prompt('비교할 첫 번째 숫자'));
+	let num2 = parseInt(prompt('비교할 두 번째 숫자'));
+
+	let compare = function(x, y){
+
+		if(x !== y){
+			if(x > y){
+				alert(`${x}(이)가 ${y}보다 큽니다.`);
+			}
+			else{
+				alert(`${y}(이)가 ${x}보다 큽니다.`);
+			}
+		}
+		else{
+			alert('두 수는 같습니다.');
+		};
+	};
+	 compare(num1, num2);
+  </script>
+</body>
+</html>
