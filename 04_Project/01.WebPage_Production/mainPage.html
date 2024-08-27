@@ -7,10 +7,10 @@
     <style>
         /* head부분 */
         #head{
-            background-color: #d9d9d9;
+            background-color: #D9D9D9;
+            width : 1920px;
             height: 70px;
-            width: 100%;
-            /* margin-left: -8px; */
+            /*헤더 상단 고정하는 법 알아보기*/
         }
         #pw{
             font-family: "Aguafina Script";
@@ -21,13 +21,13 @@
             margin-top: 5px;
         }
         #login{
-            width: 28%;
+            width: 360px;
             font-size: 20px;
             font-weight: 100;
-            text-align: right;
-            margin-left: 70%;
-            margin-top: -37px;
-            vertical-align: top;
+            margin-left: 1620px;
+            margin-top: -80px;
+            padding-left: 10px;
+            vertical-align: middle;
         }
         .inline-block1 {
             display: inline-block;
@@ -39,7 +39,7 @@
             background-size: cover;
             background-position: 50% 50%;
             background-repeat: no-repeat;
-            width: 100%;
+            width: 1920px
             /* margin-left: -8px; */
         }
         #text{
@@ -65,13 +65,14 @@
         }
         #click{
             background-color: #FFFFFF;
-            width: 80px;
+            width: 70px;
             height: 40px;
             border-radius: 8px;
             vertical-align: middle;
             margin-left: -88px;
             border: solid #FFFFFF;
             font-size: 20px;
+            margin-top: -7px;
         }
         #searchBox{
             text-align: center;
@@ -80,10 +81,12 @@
         /* menu 부분 */
         .block1{
             margin-left: 8px;
+            width: 1920px;
+            height: 250px;
         }
         .inline-block3{
-            width: 25.2%;
-            height: 220px;
+            width: 481px;
+            height: 250px;
             display: inline-block;
             margin-left: -8px;
         }
@@ -100,13 +103,13 @@
             background-color: #D9D9D9;
         }
         .menu{
-            width : 100%;
-            height: 80px;
+            width : 480px;
+            height: 220px;
             letter-spacing: 10px;
             color: #FFFFFF;
             font-size: 50px;
             text-align: center;
-            vertical-align: 50%;
+            vertical-align: center;
             margin-top: 80px;
             font-weight: 800;
         }
@@ -120,11 +123,38 @@
     </div>
     <div id="image" class="block">
         <div id="text" class="inline-block2">Post World에 오신 것을 환영합니다.</div>
-        <form id="form" action="search" method="post" class="inline-block2">
-            <div id="searchBox"><input type="text" name="search">
-            <button id="click" type="submit">검색</button></div>
+        <form  name="mainSearch" class="inline-block2">
+            <div id="searchBox">
+                <input type="text" id="searchSea" name="inputSea">
+                <input type="submit" value="검색">
+            </div>
         </form>
     </div>
+    <script>
+        const $search = document.getElementById("searchSea");
+        const $button = document.querySelector("input[type=submit]");
+        // $search.innerText = '바다';
+        
+        let keyword = $search.value;
+
+        
+        
+        console.log($search);
+        console.log($button);
+        console.log(keyword);
+        
+   
+            if(keyword === "바다"){
+            $button.onclick = () => window.open("https://naver.com");
+        }
+        
+        // if($search.innerText === "바다"){
+        //     $button.onclick = () => window.location("https://naver.com");
+        // }
+        
+
+    </script>
+
     <div class="block1">
         <div id="nature" class="inline-block3">
             <div class="menu" >자연</div>
@@ -139,6 +169,10 @@
             <div class="menu">기타</div>
         </div>
     </div>
+    <script>
+        const $nature = document.getElementById("nature");
+        $nature.addEventListener('click', () => location.assign("http://127.0.0.1:5500/LECTURE/Practice/04_Project/01.WebPage_Production/detailPage_01_nature.html"))
+    </script>
     
 </body>
 </html>
