@@ -14,10 +14,10 @@
     </div>
     <script>
         const toHome = document.getElementById("pw");
-        toHome.addEventListener('click', () => location.href = "http://127.0.0.1:5500/01_mainPage.html")
+        toHome.addEventListener('click', () => location.href = "http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/01_mainPage.html")
     </script>
     <div id="body">
-        <!-- menu -->
+    <!-- menu -->
         <div id="menu" class="bodyblock">
             <div id="nature" class="title">자연</div>
             <div id="sea" class="sub">바다</div>
@@ -30,10 +30,10 @@
         </div>
         <script>
         const $nature = document.getElementById("nature")
-        $nature.onclick = () => location.href = "http://127.0.0.1:5500/02_detailPage_01nature.html"
+        $nature.onclick = () => location.href = "http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/02_detailPage_01nature.htmll"
         
         const $sea = document.getElementById("sea");
-        $sea.onclick = () => location.href = "http://127.0.0.1:5500/02detailPage_01_01_sea.html"
+        $sea.onclick = () => location.href = "http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/02detailPage_01_01_sea.html"
         </script>
         <div id="purchase" class="bodyblock">
             <img src="purchasePage/big_picnic (1).jpg" alt="공원의 벤치" class="formInline">
@@ -110,7 +110,7 @@
                         };
                     </script>
                 </form>
-                <div id="texttotal" class="price">합계 :<p id="totalPrice" class="price" onclick="mergePrice()"></p><p id="won">원</p></div>
+                <div id="texttotal" class="price">합계 :<p id="totalPrice" class="price"></p><p id="won">원</p></div>
                 <script>
                     //  function handleOnChange1(e){
                     //     const size = e.value;
@@ -134,7 +134,7 @@
                     //     console.log(quantity);
                     // }
 
-                    function mergePrice(){
+                    function coatingOptionChange(){
                         let totalPrice = document.getElementById("totalPrice");
                         totalPrice.innerHTML = (2500 + Number(size.value) + Number(paper.value) + Number(coating.value)) * Number(quantity.value);
                         // console.log(size);
