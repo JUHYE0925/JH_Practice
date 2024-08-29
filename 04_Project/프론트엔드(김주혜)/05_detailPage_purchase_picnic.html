@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매</title>
+    <link rel="stylesheet" href="css/purchasePage.css">
+</head>
+<body>
+    <!-- head -->
+    <div id="head">
+        <div id="pw" class="inline-block1">PW</div>
+        <div id="login" class="inline-block1">장바구니 | 회원가입 | 로그인</div>
+    </div>
+    <script>
+        const toHome = document.getElementById("pw");
+        toHome.addEventListener('click', () => location.href = "http://127.0.0.1:5500/01_mainPage.html")
+    </script>
+    <div id="body">
+        <!-- menu -->
+        <div id="menu" class="bodyblock">
+            <div id="nature" class="title">자연</div>
+            <div id="sea" class="sub">바다</div>
+            <div id="sky" class="sub">하늘</div>
+            <div id="forest" class="sub">숲</div>
+            <div id="desert" class="sub">사막</div>
+            <div id="park" class="title">공원</div>
+            <div id="city" class="title">도시</div>
+            <div id="etc" class="title">기타</div>
+        </div>
+        <script>
+        const $nature = document.getElementById("nature")
+        $nature.onclick = () => location.href = "http://127.0.0.1:5500/02_detailPage_01nature.html"
+        
+        const $sea = document.getElementById("sea");
+        $sea.onclick = () => location.href = "http://127.0.0.1:5500/02detailPage_01_01_sea.html"
+        </script>
+        <div id="purchase" class="bodyblock">
+            <img src="purchasePage/big_picnic (1).jpg" alt="공원의 벤치" class="formInline">
+            <div id="form" class="formInline">
+                <div id="textSea">공원의 벤치</div>
+                <div id="textprice">2,500원 ~</div>
+                <div id="warning">용지에 따라 사진의 해상도는 원본과 차이가 있을 수 있습니다.</div>
+                <form>
+                    <div class="select">
+                    <label class="label">사이즈</label><br>
+                        <select id="size" onchange="sizeOptionChange(this)">
+                            <option value="" class="value"> -- 사이즈를 선택해주세요. --
+                                <option name="size" value="0">152x102(6x4가로형)</option>
+                                <option name="size" value="1100">178x127(7x5가로형)</option>
+                                <option name="size" value="500">90x90(정사각형)</option>
+                                <option name="size" value="0">102x152(4x6세로형)</option>
+                                <option name="size" value="1100">127x178(5x7세로형)</option>
+                                <option name="size" value="300">95x210(리플렛형)</option>
+                            </option>
+                        </select>
+                        <div id=sizeAddPrice></div>
+                    </div>
+                    <script>
+                        function sizeOptionChange(e){
+                            const sizeOption = e.value;
+                            document.getElementById("sizeAddPrice").innerText = "+" + sizeOption + "원";
+                        };
+                    </script> 
+                    <br>
+                    <div class="select">
+                    <label class="label">용지</label><br>
+                        <select id="paper" onchange="paperOptionChange(this)">
+                            <option value="" class="value"> -- 용지를 선택해주세요. --
+                                <option value="0">아트지 250g</option>
+                                <option value="200">아트지 300g</option>
+                                <option value="2100">랑데뷰 240g</option>
+                                <option value="2100">앙상블 210g</option>
+                                <option value="2300">마쉬맬로우 209g</option>
+                                <option value="2800">띤또레또 350g</option>
+                                <option value="3200">린넨커버 216g</option>
+                            </option>
+                        </select>
+                        <div id=paperAddPrice></div>
+                    </div>
+                    <script>
+                        function paperOptionChange(e){
+                            const paperOption = e.value;
+                            document.getElementById("paperAddPrice").innerText = "+" + paperOption + "원";
+                        };
+                    </script> 
+                    <br>
+                    <div class="select">
+                        <label class="label">수량 </label><br>
+                        <input id="quantity" type="number" min="0" max="100" value="0" step="5">
+                    </div>
+                    <br>
+                    <div class="select">
+                    <label class="label">옵션 </label><br>
+                        <select id="coating" onchange="coatingOptionChange(this)">
+                            <option value="" class="value">-- 사이즈를 선택해주세요. --
+                                <option value="0">코팅 없음</option>
+                                <option value="0">무광-앞면</option>
+                                <option value="0">무광-양면</option>
+                                <option value="200">유광-앞면</option>
+                                <option value="400">유광-양면</option>
+                            </option>
+                        </select>
+                        <div id=coatingAddPrice></div>
+                    </div>
+                    <script>
+                        function coatingOptionChange(e){
+                            const coatingOption = e.value;
+                            document.getElementById("coatingAddPrice").innerText = "+" + coatingOption + "원";
+                        };
+                    </script>
+                </form>
+                <div id="texttotal" class="price">합계 :<p id="totalPrice" class="price" onclick="mergePrice()"></p><p id="won">원</p></div>
+                <script>
+                    //  function handleOnChange1(e){
+                    //     const size = e.value;
+                    //     document.getElementById("size").innertext = size;
+                    //     console.log(size);
+                    // }
+
+                    // function handleOnChange2(e){
+                    //     const paper = e.value;
+                    //     document.getElementById("paper").innertext = paper;
+                    //     console.log(paper);
+                    // }
+                    // function handleOnChange3(e){
+                    //     const coating = e.value;
+                    //     document.getElementById("coating").innertext = coating;
+                    //     console.log(coating);
+                    // }
+                    // function handleOnChange4(e){
+                    //     const quantity = e.value;
+                    //     document.getElementById("quantity").innertext = quantity;
+                    //     console.log(quantity);
+                    // }
+
+                    function mergePrice(){
+                        let totalPrice = document.getElementById("totalPrice");
+                        totalPrice.innerHTML = (2500 + Number(size.value) + Number(paper.value) + Number(coating.value)) * Number(quantity.value);
+                        // console.log(size);
+                        console.log((2500 + Number(size.value) + Number(paper.value) + Number(coating.value)) * Number(quantity.value));
+                    };
+                </script>
+                <input type="submit" value="찜하기" class="button">
+                <input type="submit" value="장바구니" class="button">
+                <input type="submit" value="구매하기" class="button">
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

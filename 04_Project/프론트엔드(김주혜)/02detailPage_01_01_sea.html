@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바다</title>
+    <style>
+        #head{
+            background-color: #D9D9D9;
+            width : 1920px;
+            height: 70px;
+            /*헤더 상단 고정하는 법 알아보기*/
+        }
+        #pw{
+            font-family: "Aguafina Script";
+            font-size: 40px;
+            font-weight: 800;
+            margin-left: 20px;
+            font-style: oblique;
+            margin-top: 5px;
+        }
+        #login{
+            width: 360px;
+            font-size: 20px;
+            font-weight: 100;
+            margin-left: 1620px;
+            margin-top: -80px;
+            padding-left: 10px;
+            vertical-align: middle;
+
+        }
+        .inline-block1 {
+            display: inline-block;
+        }
+        #body{
+            width: 1920px;
+            height: 980px;
+        }
+        #menu{
+
+            background-color: #1F306A;
+            width: 200px;
+            height: 980px;
+        }
+        .title{
+            font-size: 40px;
+            font-weight: 800;
+            margin-top: 10px;
+            display: block;
+            margin-left: 15px;
+            padding-top: 25px;
+            color: #FFFFFF;
+        }
+        .sub{
+            width: 40px;
+            font-size: 20px;
+            font-weight: 100;
+            border-bottom: 1px dashed #FFFFFF;
+            text-align: left;
+            margin-top: 20px;
+            margin-left: 25px;
+            color: #c9c9c9;
+        }
+        #sea {
+            /* font-weight: bold; */
+            font-size: 23px;
+            width: 50px;
+            color: #FFFFFF;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        #main{
+            width: 1720px;
+            height: 980px;
+            margin-left: -6px;
+        }
+        form{
+            margin-top: 50px;
+        }
+        input{
+            width: 400px;
+            height: 40px;
+            border-radius: 8px;
+            border: solid #d9d9d9;
+            background-color: #d9d9d9;
+            text-align: center;
+            font-size: 19px;
+
+        }
+        input[type=button]{
+            width: 70px;
+            height: 40px;
+            vertical-align: -3px;
+            margin-left: -80px;
+            background: #D9D9D9;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #searchBox{
+            text-align: center;
+        }
+        .bodyblock{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .firstline{
+            display: inline-block;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .secondline{
+            display: inline-block;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .photos{
+            width: 200px;
+        }
+        .photos img{
+            width: 200px;
+            height: auto;
+            
+        }
+        .name{
+            font-size: 110%;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .price{
+            font-size: 80%;
+            margin-top: 4px;
+            margin-left: 5px;
+        }
+        .blocks{
+            display: block;
+            margin-left: 70px;
+            margin-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- head -->
+    <div id="head">
+        <div id="pw" class="inline-block1">PW</div>
+        <div id="login" class="inline-block1">장바구니 | 회원가입 | 로그인</div>
+    </div>
+    <script>
+        const toHome = document.getElementById("pw");
+        toHome.addEventListener('click', () => location.href = "http://127.0.0.1:5500/01_mainPage.html")
+    </script>
+
+    <div id="body">
+        <!-- menu -->
+        <div id="menu" class="bodyblock">
+            <div id="nature" class="title">자연</div>
+            <div id="sea" class="sub">바다</div>
+            <div id="sky" class="sub">하늘</div>
+            <div id="forest" class="sub">숲</div>
+            <div id="desert" class="sub">사막</div>
+            <div id="park" class="title">공원</div>
+            <div id="city" class="title">도시</div>
+            <div id="etc" class="title">기타</div>
+        </div>
+        <script>
+        const $nature = document.getElementById("nature")
+        $nature.onclick = () => location.href = "http://127.0.0.1:5500/02_detailPage_01nature.html"
+        
+        const $sea = document.getElementById("sea");
+        $sea.onclick = () => location.href = "http://127.0.0.1:5500/02detailPage_01_01_sea.html"
+        </script>
+        <!-- main -->
+        <div id="main" class="bodyblock">
+            <div>
+                <form  name="mainSearch" class="inline-block2">
+                    <div id="searchBox">
+                        <input type="text" id="searchSea">
+                        <input type="button" value="검색" onClick="getKeywordInText()">
+                    </div>
+                </form>
+            </div>
+
+            <div class="blocks">
+                <div id="photo1" class="firstline">
+                    <div class="photos">
+                        <img src="naturePage/nature_05.jpg" alt="이른 아침 바다">
+                    </div>
+                    <div class="name">이른 아침 바다</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $seaOfDawnPurchase = document.getElementById("photo1")
+                    $seaOfDawnPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_sea_of_dawn.html"
+                </script>
+
+                <div id="photo2" class="firstline">
+                    <div class="photos" >
+                        <img src="naturePage/nature_02.jpg" alt="바다 위 어선">
+                    </div>
+                    <div class="name">바다 위 어선</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $LHSeaPurchase = document.getElementById("photo2")
+                    $LHSeaPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_LH_sea.html"
+                </script>
+
+                <div id="photo3" class="firstline">
+                    <div class="photos" >
+                        <img src="seaPage/sea_01.jpg" alt="파도치는 겨울 바다">
+                    </div>
+                    <div class="name">겨울 바다</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $winterSea = document.getElementById("photo3")
+                    // $winterSea.onclick = () => window.location("http://127.0.0.1:5500/05_detailPage_purchase_winterSea.html")
+                    $winterSea.addEventListener('click', () => location.assign("http://127.0.0.1:5500/05_detailPage_purchase_winterSea.html"))
+                </script>
+
+                <div id="photo4" class="firstline">
+                    <div class="photos" >
+                        <img src="seaPage/sea_02.jpg" alt="광안 대교">
+                    </div>
+                    <div class="name">광안 대교</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $GwangahntPurchase = document.getElementById("photo4")
+                    $GwangahntPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_Gwangahn.html"
+                </script>
+
+                <div id="photo5" class="firstline">
+                    <div class="photos" >
+                        <img src="seaPage/sea_03.png" alt="붉은 석양 아래 바다">
+                    </div>
+                    <div class="name">붉은 석양 아래 바다</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $lastNightLHPurchase = document.getElementById("photo5")
+                    $lastNightLHPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_lastnightLH.html"
+                </script>
+
+                <div id="photo11" class="firstline">
+                    <div class="photos" >
+                        <img src="naturePage/nature_04.jpg" alt="어스름한 바다">
+                    </div>
+                    <div class="name">어스름한 바다</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $seaInMidnightPurchase = document.getElementById("photo11")
+                    $seaInMidnightPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_sea_in_midnight.html"
+                </script>
+
+            </div>
+            <div class="blocks">
+                <div id="photo6" class="secondline">
+                    <div class="photos" >
+                        <img src="naturePage/nature_11.jpg" alt="에트르타 해변">
+                    </div>
+                    <div class="name">에트르타 해변</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $etretatPurchase = document.getElementById("photo6")
+                    $etretatPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_Etretat.html"
+                </script>
+
+                <div id="photo7" class="secondline">
+                    <div class="photos" >
+                        <img src="seaPage/sea_04.png" alt="보라빛 밤 바다">
+                    </div>
+                    <div class="name">보라빛 밤 바다</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $purpleSeaPurchase = document.getElementById("photo7")
+                    $purpleSeaPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_purpleSea.html"
+                </script>
+
+                <div id="photo8" class="secondline ">
+                    <div class="photos" >
+                        <img src="seaPage/sea_05.jpg" alt="노을과 바다">
+                    </div>
+                    <div class="name">노을과 바다</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $sunsetSeaPurchase = document.getElementById("photo8")
+                    $sunsetSeaPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_sunsetSea.html"
+                </script>
+
+                <div id="photo9" class="secondline">
+                    <div class="photos" >
+                        <img src="seaPage/sea_06.jpg" alt="외딴 섬바위">
+                    </div>
+                    <div class="name">외딴 섬바위</div>
+                    <div class="price">2,500부터</div>
+                </div>
+                <script>
+                    const $lonelyRockPurchase = document.getElementById("photo9")
+                    $lonelyRockPurchase.onclick = () => location.href = "http://127.0.0.1:5500/05_detailPage_purchase_lonelyRock.html"
+                </script>
+        </div>
+    </div>
+    <script>
+        function getKeywordInText(){
+            let inputKeyword = document.getElementById("searchSea").value;
+            console.log(inputKeyword);
+
+            // if(inputKeyword === "바다"){
+            //     location.href ="http://127.0.0.1:5500/02detailPage_01_01_sea.html"
+            // }
+            if(inputKeyword === "자연"){
+                window.open("http://127.0.0.1:5500/02_detailPage_01nature.html")
+            }
+        }
+    </script>
+</body>
+</html>

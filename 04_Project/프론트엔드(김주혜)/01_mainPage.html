@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Word</title>
+    <style>
+        /* head부분 */
+        #head{
+            background-color: #D9D9D9;
+            width : 1920px;
+            height: 70px;
+        }
+        #pw{
+            font-family: "Aguafina Script";
+            font-size: 40px;
+            font-weight: 800;
+            margin-left: 20px;
+            font-style: oblique;
+            margin-top: 5px;
+        }
+        #login{
+            width: 360px;
+            font-size: 20px;
+            font-weight: 100;
+            margin-left: 1620px;
+            margin-top: -80px;
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+        .inline-block1 {
+            display: inline-block;
+        }
+        /* image부분 */
+        #image{
+            height: 650px;
+            background-image: url("mainPage/mainPage_forest.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            width: 1920px
+        }
+        #text{
+            color: #FFFFFF;
+            font-size: 50px;
+            font-weight: 100;
+            text-align: center;
+            padding-top: 200px;
+        }
+
+        .inline-block2{
+            display: block;
+        }
+        input{
+            width: 400px;
+            height: 40px;
+            border-radius: 8px;
+            border: solid #FFFFFF;
+            text-align: center;
+            font-size: 19px;
+
+        }
+        input[type=submit]{
+            width: 70px;
+            height: 40px;
+            vertical-align: -2px;
+            margin-left: -80px;
+            background: #FFFFFF;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #searchBox{
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* menu 부분 */
+        .block1{
+            margin-left: 8px;
+            width: 1920px;
+            height: 250px;
+        }
+        .inline-block3{
+            width: 481px;
+            height: 250px;
+            display: inline-block;
+            margin-left: -8px;
+        }
+        #nature{
+            background-color: #1F306A;
+        }
+        #park{
+            background-color: #206A1F;
+        }
+        #city{
+            background-color: #ECBF68;
+        }
+        #etc{
+            background-color: #D9D9D9;
+        }
+        .menu{
+            width : 480px;
+            height: 220px;
+            letter-spacing: 10px;
+            color: #FFFFFF;
+            font-size: 50px;
+            text-align: center;
+            vertical-align: center;
+            margin-top: 80px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <div id="pw" class="inline-block1">PW</div>
+        <div id="login" class="inline-block1">장바구니 | 회원가입 | 로그인</div>
+    </div>
+    <div id="image" class="block">
+        <div id="text" class="inline-block2">Post World에 오신 것을 환영합니다.</div>
+        <form id="form1">
+            <form  name="mainSearch" class="inline-block2">
+                <div id="searchBox">
+                    <input type="text" id="searchSea">
+                    <input type="submit" value="검색" onClick="getKeywordInText()">
+                </div>
+            </form>
+        </div>
+        </form>
+    <script>
+        const toHome = document.getElementById("pw");
+        toHome.addEventListener('click', () => location.href = "http://127.0.0.1:5500/01_mainPage.html")
+
+        function getKeywordInText(){
+            let inputKeyword = document.getElementById("searchSea").value;
+            console.log(inputKeyword);
+            
+            if(inputKeyword === "바다"){
+                let form1 = document.getElementById("form1");
+                form1.action = "http://127.0.0.1:5500/02detailPage_01_01_sea.html"
+                // location.href ="http://127.0.0.1:5500/02detailPage_01_01_sea.html"
+            }
+            if(inputKeyword === "자연"){
+                form1.action = "http://127.0.0.1:5500/02_detailPage_01nature.html"
+            }
+        }
+
+    </script>
+
+    <div class="block1">
+        <div id="nature" class="inline-block3">
+            <div class="menu" >자연</div>
+        </div>
+        <div id="park" class="inline-block3">
+            <div class="menu">공원</div>
+        </div>
+        <div id="city" class="inline-block3">
+            <div class="menu">도시</div>
+        </div>
+        <div id="etc" class="inline-block3">
+            <div class="menu">기타</div>
+        </div>
+    </div>
+    <script>
+        const $nature = document.getElementById("nature");
+        $nature.addEventListener('click', () => location.assign("http://127.0.0.1:5500/02_detailPage_01nature.html"))
+    </script>
+    
+</body>
+</html>
