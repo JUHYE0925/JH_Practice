@@ -1,0 +1,62 @@
+메인 
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/01_mainPage.html
+
+자연
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/02_detailPage_01nature.html
+
+바다
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/02detailPage_01_01_sea.html
+
+보트
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_boat.html
+
+에트르타
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_Etretat.html
+
+숲
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_forest.html
+
+광안대교
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_Gwangahn.html
+
+할슈타트
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_Gwangahn.html
+
+마지막날
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_lastnightLH.html
+
+어선
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_LH_sea.html
+
+외딴 섬
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_lonelyRock.html
+
+달
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_moon.html
+
+산
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_mountain.html
+
+피크닉
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_picnic.html
+
+보라 바다
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_purpleSea.html
+
+한강 윤슬
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_riverSunset.html
+
+미드나잇 르아브르
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_sea_in_midnight.html
+
+새벽 바다
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_sea_of_dawn.html
+
+구름
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_sky.html
+
+보령
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_sunsetSea.html
+
+겨울 바다
+http://127.0.0.1:5500/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C(%EA%B9%80%EC%A3%BC%ED%98%9C)/05_detailPage_purchase_winterSea.html
