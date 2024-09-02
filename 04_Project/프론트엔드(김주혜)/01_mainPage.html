@@ -32,6 +32,20 @@
             </form>
         </div>
         </form>
+    <div class="block1">
+        <div id="nature" class="inline-block3">
+            <div class="menu" >자연</div>
+        </div>
+        <div id="park" class="inline-block3">
+            <div class="menu">공원</div>
+        </div>
+        <div id="city" class="inline-block3">
+            <div class="menu">도시</div>
+        </div>
+        <div id="etc" class="inline-block3">
+            <div class="menu">기타</div>
+        </div>
+    </div>
     <script>
         const toHome = document.getElementById("pw");
         toHome.addEventListener('click', () => location.href = "01_mainPage.html");
@@ -52,23 +66,6 @@
             }
         }
 
-    </script>
-
-    <div class="block1">
-        <div id="nature" class="inline-block3">
-            <div class="menu" >자연</div>
-        </div>
-        <div id="park" class="inline-block3">
-            <div class="menu">공원</div>
-        </div>
-        <div id="city" class="inline-block3">
-            <div class="menu">도시</div>
-        </div>
-        <div id="etc" class="inline-block3">
-            <div class="menu">기타</div>
-        </div>
-    </div>
-    <script>
         const $nature = document.getElementById("nature");
         $nature.addEventListener('click', () => location.assign("02_detailPage_01nature.html"))
     </script>
