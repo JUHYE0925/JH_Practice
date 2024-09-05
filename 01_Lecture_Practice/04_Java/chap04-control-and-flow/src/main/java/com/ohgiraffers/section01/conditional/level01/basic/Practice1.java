@@ -17,11 +17,11 @@ public class Practice1 {
          * */
 
         Practice1 method = new Practice1();
-        method.pisitiveNumber();
+        method.positiveNumber();
 
     }
 
-    public void pisitiveNumber(){
+    public void positiveNumber(){
 
         Scanner sc = new Scanner(System.in);
 
