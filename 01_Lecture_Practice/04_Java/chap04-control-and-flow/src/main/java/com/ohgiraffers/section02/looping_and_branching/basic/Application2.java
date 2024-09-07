@@ -22,13 +22,25 @@ public class Application2 {
         Scanner sc = new Scanner(System.in);
         System.out.print("정수를 입력하세요 : ");
         int num = sc.nextInt();
+
+        System.out.println("============ for문 ============");
         int sum = 0;
 
         for(int i = 1; i <=num; i++){
 
             sum += i;
         }
-        System.out.println("1부터 입력받은 정수 " + num + " 까지의 합 : " + sum + "입니다.");
+        System.out.println("1부터 입력받은 정수 " + num + "까지의 합 : " + sum + "입니다.");
+
+        System.out.println("============ while문 ============");
+
+        int sum2 = 0;
+        int j = 1;
+        while(j <= num){
+            sum2 += j;
+            j++;
+        }
+        System.out.println("1부터 입력받은 정수 " + num + "까지의 합 : " + sum2 + "입니다.");
 
     }
 }

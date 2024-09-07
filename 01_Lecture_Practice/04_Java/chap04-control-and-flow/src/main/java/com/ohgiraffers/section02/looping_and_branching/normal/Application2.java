@@ -14,10 +14,19 @@ public class Application2 {
 
         public void aToZ(){
 
-
+        System.out.println("============ for문 ===========");
         for(char i = 97; i <= 122; i++){
                 System.out.print(i);
             }
+
+        System.out.println();
+
+        System.out.println("============ while문 ===========");
+        char j = 97;
+        while(j <= 122){
+            System.out.print(j);
+            j++;
+        }
         }
 
 }

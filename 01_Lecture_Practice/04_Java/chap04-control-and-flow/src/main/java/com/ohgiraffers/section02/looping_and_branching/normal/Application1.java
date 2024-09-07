@@ -27,9 +27,19 @@ public class Application1 {
         System.out.println("문자열을 입력하세요 : ");
         String str = sc.nextLine();
 
+        System.out.println("============ for문 ===========");
         for(int i = 0; i < str.length(); i++){
             char ch = str.charAt(i);
             System.out.println(i + " : " + ch);
+        }
+
+        System.out.println("============ while문 ===========");
+
+        int j = 0;
+        while(j < str.length()){
+            char ch = str.charAt(j);
+            System.out.println(j + " : " + ch);
+            j++;
         }
 
     }

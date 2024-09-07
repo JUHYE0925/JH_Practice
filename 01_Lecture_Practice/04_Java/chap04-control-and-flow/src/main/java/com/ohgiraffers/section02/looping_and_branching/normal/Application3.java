@@ -27,7 +27,7 @@ public class Application3 {
         String su = "수";
         String back = "박";
 
-
+        System.out.println("============ for문 ===========");
         for(int i = 1; i <= num; i++){
             if(i % 2 != 0){
                 System.out.print(su);
@@ -35,7 +35,18 @@ public class Application3 {
                 System.out.print(back);
             }
         }
+        System.out.println();
 
+        System.out.println("============ while문 ===========");
+        int j = 1;
+        while(j <= num){
+            if(j % 2 != 0){
+                System.out.print(su);
+            } else {
+                System.out.print(back);
+            }
+            j++;
+        }
 
     }
 }
