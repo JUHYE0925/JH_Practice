@@ -35,75 +35,58 @@ public class Student {
 
     * */
 
-    private boolean startLecture;
-    private boolean explain;
-    private boolean understanding;
-    private boolean endLecture;
+    private boolean isStart;
+    private boolean isUnderstand;
 
     public void startLecture(){
 
-        if(startLecture){
+        if(isStart){
             System.out.println("강의가 이미 시작하였습니다. 자리에 앉아주세요.");
         } else{
-            this.startLecture = true;
+            this.isStart = true;
             System.out.println("강의를 시작합니다.");
         }
     }
 
     public void listening() {
-        if (startLecture) {
-//            if (explain) {
-                System.out.println("강사님의 설명을 듣습니다.");
-//            }
-//            else {
-//                this.explain = true;
-//                System.out.println("강사님의 설명을 듣지 않습니다.");
-//            }
+        if (isStart){
+            this.isUnderstand = true;
+            System.out.println("강사님의 설명을 듣습니다.");
         } else {
-            this.startLecture = true;
-            System.out.println("강의가 시작하지 않았습니다.");
+            System.out.println("강의가 아직 시작하지 않았습니다.");
         }
     }
-        public void understandingExplain(){
+    public void understandingExplain() {
 
-        if(startLecture){
-            if(explain){
+        if (isStart) {
+            if (isUnderstand) {
 
-//                Scanner sc = new Scanner(System.in);
-//                System.out.println("강의 내용 이해 여부 : 1. 이해간다. 2. 이해가지 않는다.");
-//                this.understanding = sc.nextInt();
+                Scanner sc = new Scanner(System.in);
+                System.out.println("이해 여부 : 1. 이해되었다. 2. 이해가 안되었다.");
+                int understanding = sc.nextInt();
 
-                if(understanding){
-                    System.out.println("내용이 이해가 되어 다음으로 넘어가도 좋습니다.");
+                if (understanding == 1) {
+                    System.out.println("이해가 되어 다음으로 넘어가도 좋습니다.");
                 } else {
-                    this.understanding = true;
-                    System.out.println("이해가 가지 않아 질문을 해야겠습니다.");
-
+                    System.out.println("설명을 제대로 듣지 못하여 이해가 가지 않으니 질문을 해야겠습니다.");
+                    this.isUnderstand = true;
                 }
             } else {
-                this.explain = true;
-                System.out.println("설명을 듣지 않고 있습니다. 우선 설명부터 들으세요.");
+//                this.startLecture = true;
+                System.out.println("강사님의 설명을 아직 듣지 않았습니다. 먼저 설명을 들어주세요.");
             }
-        } else{
-            this.startLecture = true;
+        }else{
             System.out.println("강의를 시작하지도 않았습니다. 강의를 먼저 시작해주세요.");
         }
     }
-        public void finishLecture(){
-           if(startLecture){
-               if(explain){
-                   if(understanding){
-                       System.out.println("모든 강의를 성공적으로 이해했다.");
-                   } else {
-                       System.out.println("이해가 되지 않아 강사님께 질문 해야겠다.");
-                   }
-               } else {
-                   System.out.println("강의를 듣고 있지 않습니다. 강의를 먼저 들어주세요.");
-               }
-           } else {
-               System.out.println("강의를 시작조차 하지 않았습니다. 먼저 강의를 시작하여주세요.");
-           }
-        }
+    public void finishLecture(){
+       if(isStart){
+               this.isStart = false;
+               System.out.println("모든 강의를 성공적으로 이해했다.");
+       } else {
+           System.out.println("강의는 이미 끝났습니다. ");
+       }
+    }
 
 
 

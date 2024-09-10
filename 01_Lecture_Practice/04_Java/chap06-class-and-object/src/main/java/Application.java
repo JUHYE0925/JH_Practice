@@ -24,8 +24,8 @@ public class Application {
                 case 2 : lecture.startExplain(); break;
                 case 3 : lecture.doUnderstanding(); break;
                 case 4 : lecture.finishLecture(); break;
-                case 5 :
-                    System.out.println("강의실을 나가면서"); break;
+                case 9 :
+                    System.out.print("강의실을 나가면서 "); break;
                 default :
                     System.out.println("잘못 누르셨습니다. 번호를 제대로 눌러주세요."); break;
             }
