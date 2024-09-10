@@ -16,7 +16,7 @@ public class Application1 {
 
     public void sumRandom(){
 
-        int random = (int)(Math.random() * 101) +1;
+        int random = (int)(Math.random() * 101) + 1;
         System.out.println("난수 : " + random);
 
         System.out.println("============== while문 ==============");

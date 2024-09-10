@@ -24,15 +24,19 @@ public class Application4 {
         System.out.println("================= for문 ================");
         int count = 0;
         for(int i = 1; i <= num; i++){
-            if(i % 2 != 0)count++;
+            if(i % 2 != 0){
+                count++;
             }
+        }
         System.out.println("1부터 " + num + "까지의 홀수의 개수는 " + count + "개 입니다.");
 
         System.out.println("================= while문 ================");
         int count2 = 0;
         int j = 1;
-        while( j < num){
-            if(j % 2 != 0)count2++;
+        while( j <= num){
+            if(j % 2 != 0) {
+                count2++;
+            }
             j++;
         }
         System.out.println("1부터 " + num + "까지의 홀수의 개수는 " + count2 + "개 입니다.");

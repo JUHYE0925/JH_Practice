@@ -7,7 +7,7 @@ public class Application4 {
     public static void main(String[] args) {
 
         //Eunseo
-        /*사용자가 입력한 수가 실수라면
+        /* 사용자가 입력한 수가 실수라면
          * 강제 자료형변환을 통해 정수로 바꾼 뒤
          * 1부터 사용자가 입력한 값을 모두 더한 뒤
          * 만약 그 값이 짝수라면
@@ -15,7 +15,7 @@ public class Application4 {
          * 홀수이면 1부터 사용자가 입력한 수까지의 짝수의 개수에 곱하시오
          *
          * 예) 원하시는 수를 입력해주세요 : 10
-         *     1부터 10까지의 합에 10의 짝수의 개수와 10을 곱하면 550입니다
+         *     1부터 10까지의 합에 10의 짝수의 개수와 10을 곱하면 550입니다.
          *
          * */
     }
@@ -27,7 +27,7 @@ public class Application4 {
         double num = sc.nextDouble();
         int num2 = (int) num;
 
-        int countOddNum = 0;
+//        int countOddNum = 0;
         int sum = 0;
        for(int i = 1; i <= num2; i++){sum+=i;}
        int countOdd = 0;

@@ -20,6 +20,6 @@ public class Main {
 //        method3.sum1ToRandom();
 
         Application4 method4 = new Application4();
-        method4.multiCount();
+//        method4.multiCount();
     }
 }

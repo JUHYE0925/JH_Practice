@@ -37,7 +37,7 @@ public class Application1 {
 
         int bmi = (int)(weight/(height*height));
 
-            System.out.println(name + "님의 BMI지수는 " + bmi + "점으로 ");
+            System.out.print(name + "님의 BMI지수는 " + bmi + "점으로 ");
             if (bmi >= 18 && bmi < 23) {
                 System.out.println("정상체중입니다.");
             } else if (bmi >= 23 && bmi < 25) {

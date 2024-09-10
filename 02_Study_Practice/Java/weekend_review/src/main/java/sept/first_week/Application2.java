@@ -21,7 +21,7 @@ public class Application2 {
 //        if(first == second){
 //            return ("두 정수의 곱은 : " + (first * second));
 //        } else {
-//            System.out.println("두 정수의 합은 : " + (first + second));
+//            // System.out.println("두 정수의 합은 : " + (first + second));
 //            return ("두 정수의 합은 : " + (first + second));
 //        }
         return (first == second)? "두 수의 곱은 : " + (first * second) : "두 수의 합은 : " + (first + second);
