@@ -13,7 +13,7 @@ public class EmployeeDTO {
     private String phone;
     private String address;
 
-    public void EmployeeDTO(){}
+    public EmployeeDTO(){}
 
     public int getNumber() {
         return number;
