@@ -10,9 +10,9 @@ public class DescCategory implements Comparator<BookDTO> {
     @Override
     public int compare(BookDTO o1, BookDTO o2) {
 
+        // 카테고리순 내림차순 정렬 처리
         int result = 0;
 
-        // 카테고리순 내림차순 정렬 처리
 
         if(o1.getCategory() > o2.getCategory()){
 
