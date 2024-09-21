@@ -37,7 +37,10 @@ public class BookMenu{
                         bm.sortedBookList(2);
                     } else{
                         System.out.println("번호를 잘못입력하였습니다.");
-                }
+                    }
+                    break;
+                case 3: bm.deleteBook(bm.searchBook(""));
+
             }
 
         }
