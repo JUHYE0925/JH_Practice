@@ -30,7 +30,7 @@ public class BookManager {
 
     public void deleteBook(int index){
         // 전달받은 도서 번호로 ArryaList 안에 있는 정보 삭제
-        //전달받은 index로 삭제
+        // 전달받은 index로 삭제
         bookList.remove(index);
     }
 
@@ -69,7 +69,7 @@ public class BookManager {
         // ArrayList<BookDTO>에 담아서 리턴
 
         // 전달받은 매개변수의 값에 따라 정렬(1. 오름차순,2. 내림차순)
-        // for문을 이용하여 ArrayList<BookDTO> 에 추가
+        // for문을 이용하여 ArrayList<BookDTO>에 추가
         // 해당 배열 주소 값 리턴
 
         if (select == 1) {
@@ -84,6 +84,13 @@ public class BookManager {
 //                    }
 //                }
 //            }
+
+            // 두 번 출력됨
+//            bookList.sort(new AscCategory());
+//            for(BookDTO asc : bookList){
+//                System.out.println(asc);
+//            }
+
             // 반복문을 통해 요소들을 순회하면서 수정(추가, 삭제)하는 코드를 작성하면 ConcurrentModificationException 발생
 //            bookList.sort(new AscCategory());
 //            for(BookDTO ascBook : bookList){
@@ -91,11 +98,11 @@ public class BookManager {
 //            }
 
             bookList.sort(new AscCategory());
-            for (BookDTO ascBook : bookList) {
-                if (bookList.contains(bookList)) {
-                    bookList.add(ascBook);
-                }
-            }
+//            for (BookDTO ascBook : bookList) {      // for문 쓰라고 해서 썼지만 잘못된 코딩같음
+//                if (bookList.contains(bookList)) {
+//                    bookList.add(ascBook);
+//                }
+//            }
         } else {
             // 내림차순
 
@@ -115,11 +122,11 @@ public class BookManager {
 //                bookList.add(descBook);
 //            }
             bookList.sort(new DescCategory());
-            for (BookDTO descBook : bookList) {
-                if (bookList.contains(bookList)) {
-                    bookList.add(descBook);
-                }
-            }
+//            for (BookDTO descBook : bookList) {
+//                if(bookList.contains(bookList)) {
+//                    bookList.add(descBook);
+//                }
+//            }
         }
         return bookList;
     }

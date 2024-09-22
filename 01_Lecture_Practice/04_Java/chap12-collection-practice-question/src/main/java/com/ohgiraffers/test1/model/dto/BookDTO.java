@@ -55,6 +55,6 @@ public class BookDTO {
         return  "도서 번호 : " + this.bNo +
                 ", 도서 제목 : " + this.title +
                 ", 도서 장르 (1:인문 / 2:자연과학 / 3:의료 / 4:기타) : " + this.category +
-                ", 도서 저자 : '" + this.author + '\'';
+                ", 도서 저자 : '" + this.author;
     }
 }

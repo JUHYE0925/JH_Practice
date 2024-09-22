@@ -11,6 +11,8 @@ public class BookMenu {
 
     private BookManager bm = new BookManager();
 
+    private boolean iscategory;
+
     // 기본생성자
     public BookMenu(){}
 
@@ -53,7 +55,7 @@ public class BookMenu {
                     break;
                 case 3:
                     // ***********************
-                    //  deleteBook (도서 번호) 실행
+                    //  deleteBook(도서 번호) 실행
                     //  => seachBook()메소드를 이용
                     //  => 결과값 리턴 받아 0일 경우 “성공적으로 삭제”
                     //  1일 경우 “삭제할 글이 존재하지 않음”
@@ -61,20 +63,20 @@ public class BookMenu {
                     System.out.println("삭제할 도서 제목을 입력해주세요 : ");
                     String deletBookNum = sc.nextLine();
                     if(bm.searchBook(deletBookNum) == -1){
-                        System.out.println("삭제할 글이 존재하지 않음");
+                        System.out.println("삭제할 도서가 존재하지 않습니다.");
                     } else{
                         bm.deleteBook(bm.searchBook(deletBookNum));
-                        System.out.println("성공적으로 삭제");
+                        System.out.println("해당 도서를 성공적으로 삭제했습니다.");
                     }
                     break;
                 case 4:
-                    // searchBook (inputBookTitle()이 리턴한 도서 제목) 실행
+                    // searchBook(inputBookTitle()이 리턴한 도서 제목) 실행
                     // => index 리턴 받아 -1일 경우 “조회한 도서가 존재하지 않음”
                     // -1이 아닐 경우 printBook(index) 출력
 
                     int search = bm.searchBook(inputBookTitle());
                     if(search == -1){
-                        System.out.println("조회한 도서가 존재하지 않음");
+                        System.out.println("조회한 도서가 존재하지 않습니다.");
                     } else{
                         bm.printBook(search);
                     }
@@ -111,23 +113,25 @@ public class BookMenu {
         // 매개변수 생성자를 이용하여 위의 초기값을 이용한 BookDTO객체 리턴
 
         BookDTO bookDTO = new BookDTO();
+
         System.out.println("도서 번호를 입력해주세요 : ");
+//        int bookNum = sc.nextInt();
+//        bookDTO.setbNO(bookNum);
         bookDTO.setbNO(sc.nextInt());
 
         sc.nextLine();
         System.out.println("도서 제목을 입력해주세요 : ");
         bookDTO.setTitle(sc.nextLine());
 
-        System.out.println("도서 장르를 입력해주세요(1.인문 / 2.자연과학 / 3.의료 / 4.기타) : ");
-        int bookCategory = sc.nextInt();
-        if(bookCategory >= 1 && bookCategory <= 4){
-            bookDTO.setCategory(bookCategory);
-        }
-//        else{
+        // 도서 카테고리 입력
+        BookMenu bookMenu = new BookMenu();
+        bookMenu.category(bookDTO);
+//        if(bookCategory >= 1 && bookCategory <= 4){
+//            bookDTO.setCategory(bookCategory);
+//        }else{
 //            System.out.println("1번과 4번 중에서 골라주세요.");
 //        }
 
-        sc.nextLine();
         System.out.println("도서 저자를 입력해주세요 : ");
         bookDTO.setAuthor(sc.nextLine());
 
@@ -143,6 +147,22 @@ public class BookMenu {
         System.out.println("도서 제목을 입력하세요 : ");
         String bookTitle = sc.nextLine();
         return bookTitle;
+    }
+
+    public void category (BookDTO bookDTO) {
+
+        while (true) {
+
+            System.out.println("도서 장르를 입력해주세요(1.인문 / 2.자연과학 / 3.의료 / 4.기타) : ");
+            int categoryNum = sc.nextInt();
+
+            if(categoryNum >= 1 && categoryNum <= 4){
+                bookDTO.setCategory(categoryNum);
+                break;
+            } else{
+                System.out.println("1번과 4번 중에서 골라주세요.");
+            }
+        }
     }
 
     // * 위와 같이 추가, 삭제, 검색에 필요한 정보는 키보드로 입력 받도록 각각의 메소드 따로 구현
