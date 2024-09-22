@@ -5,6 +5,7 @@ import com.ohgiraffers.test1.model.dto.BookDTO;
 import java.util.Comparator;
 
 public class AscCategory implements Comparator<BookDTO> {
+    // java.util.Comparator 인터페이스를 상속받은 정렬용 클래스들 작성함
     @Override
     public int compare(BookDTO o1, BookDTO o2) {
 

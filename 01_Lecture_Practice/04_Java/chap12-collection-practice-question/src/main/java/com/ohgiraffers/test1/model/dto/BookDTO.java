@@ -7,7 +7,9 @@ public class BookDTO {
     private String title;  // 도서 제목
     private String author;  // 도서 저자
 
+    // 기본 생성자
     public BookDTO(){}
+
     public BookDTO(int category, String title, String author){
         this.category = category;
         this.title = title;
@@ -48,10 +50,11 @@ public class BookDTO {
 
     @Override
     public String toString() {
+        // 필드 값 문자열 합친 후 리턴 category 분류 별로 출력
+        // >> 1 : 인문 / 2 : 자연과학 3 : 의료 / 4 : 기타
         return  "도서 번호 : " + this.bNo +
                 ", 도서 제목 : " + this.title +
                 ", 도서 장르 (1:인문 / 2:자연과학 / 3:의료 / 4:기타) : " + this.category +
-//                ", title='" + title + '\'' +
                 ", 도서 저자 : '" + this.author + '\'';
     }
 }
