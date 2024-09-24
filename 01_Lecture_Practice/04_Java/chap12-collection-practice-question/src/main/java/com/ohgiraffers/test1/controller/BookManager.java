@@ -4,11 +4,8 @@ import com.ohgiraffers.test1.model.comparator.AscCategory;
 import com.ohgiraffers.test1.model.comparator.DescCategory;
 import com.ohgiraffers.test1.model.dto.BookDTO;
 
-import java.awt.print.Book;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Stack;
 
 public class BookManager {
 
