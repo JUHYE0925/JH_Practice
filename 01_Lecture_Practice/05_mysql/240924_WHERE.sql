@@ -73,12 +73,13 @@ SELECT
        
 -- 10. EMPLOYEE테이블에서 전화번호 국번이 9로 시작하는 직원의 사번, 이름, 전화번호를 조회하세요  -> 어려운 문제
 -- HINT!! 와일드 카드 사용 : _(글자 한자리), %(0개 이상의 글자)
+-- 국번 : 010-XXXX-YYYY 중 XXXX를 말한다. YYYY는 개인번호이다.
 SELECT
        EMP_ID,
        EMP_NAME,
        PHONE
   FROM employee
- WHERE PHONE LIKE '___9_______%';
+ WHERE PHONE LIKE '___9%';
 
 -- 11. EMPLOYEE테이블에서 전화번호 국번이 4자리 이면서 9로 시작하는 직원의 사번, 이름, 전화번호를 조회하세요  -> 어려운 문제
 SELECT
@@ -86,7 +87,7 @@ SELECT
       EMP_NAME,
       PHONE
   FROM employee
- WHERE PHONE LIKE '___9%';
+ WHERE PHONE LIKE '%9_______';
 
 -- 12. 부서코드가 'D6' 이거나 'D8'인 직원의 이름, 부서, 급여를 조회하세요
 -- HINT!! IN 연산자 : 비교하려는 값 목록에 일치하는 값이 있는지 확인
@@ -114,10 +115,24 @@ SELECT
  WHERE (JOB_CODE = 'J2' AND SALARY > 2000000) OR JOB_CODE = 'J7';
 
 -- 15. J7 직급이거나 J2 직급인 직원들 중 급여가 200만원 이상인 직원의 이름, 급여, 직급코드를 조회하세요
+-- SELECT
+--        EMP_NAME,
+-- 	   SALARY,
+--        JOB_CODE
+--   FROM employee
+--  WHERE (JOB_CODE = 'J7' AND SALARY > 2000000) OR
+--        (JOB_CODE = 'J2' AND SALARY > 2000000);
+       
 SELECT
        EMP_NAME,
 	   SALARY,
        JOB_CODE
   FROM employee
- WHERE (JOB_CODE = 'J7' AND SALARY > 2000000) OR
-       (JOB_CODE = 'J2' AND SALARY > 2000000);
+ WHERE JOB_CODE = 'J2' OR JOB_CODE = 'J7' AND SALARY > 2000000;
+ 
+-- SELECT
+--        EMP_NAME,
+-- 	   SALARY,
+--        JOB_CODE
+--   FROM employee
+--  WHERE JOB_CODE = 'J7' OR JOB_CODE = 'J2' AND SALARY > 2000000;  -- 이렇게 작성 시 SALARY > 2000000가 J7에 적용되지 않음.

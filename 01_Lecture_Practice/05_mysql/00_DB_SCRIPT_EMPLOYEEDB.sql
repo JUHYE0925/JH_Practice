@@ -1,4 +1,4 @@
-USE employee;
+USE employeedb;
 
 #DROP TABLE `EMPLOYEE`;
 #DROP TABLE `DEPARTMENT`;
