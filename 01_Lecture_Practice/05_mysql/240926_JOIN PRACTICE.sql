@@ -55,8 +55,8 @@ SELECT
        B.DEPT_TITLE,
        C.LOCAL_NAME
   FROM employee A
- INNER JOIN department B ON (A.DEPT_CODE = B.DEPT_ID)
- INNER JOIN location C ON (B.LOCATION_ID = C.LOCAL_CODE)
+ LEFT JOIN department B ON (A.DEPT_CODE = B.DEPT_ID)
+ LEFT JOIN location C ON (B.LOCATION_ID = C.LOCAL_CODE)
  WHERE A.BONUS IS NOT NULL;
 
 -- 6. 부서코드가 D2인 직원의 이름, 직급명, 부서명, 지역명을 조회하세오.
