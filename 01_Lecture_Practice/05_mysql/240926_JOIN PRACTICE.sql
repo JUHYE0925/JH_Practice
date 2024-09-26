@@ -25,9 +25,9 @@ SELECT
 INNER JOIN department B ON(A.DEPT_CODE = B.DEPT_ID)
 INNER JOIN job C ON(A.JOB_CODE = C.JOB_CODE)
  WHERE A.EMP_NO BETWEEN '70%' AND '79%' AND
-       A.EMP_NO LIKE '______-2______';
+       A.EMP_NO LIKE '______-2______' AND
+       A.EMP_NAME LIKE '전%';
  
-
 -- 3. 이름에 '형'자가 들어가는 직원의 사번, 이름, 직급명을 조회하세요.
 SELECT
        A.EMP_ID,
