@@ -64,40 +64,39 @@ SELECT
                   
 -- 위의 쿼리문을 GROUP BY랑 LEFT JOIN을 사용해서 할 수 있는지 공부해보기
                   
-SELECT
-        A.EMP_NAME,
-        A.JOB_CODE,
-        A.DEPT_CODE,
-        A.SALARY
-   FROM employee A
-   LEFT JOIN (SELECT
-					 SALARY,
-					 DEPT_CODE,
-                     EMP_NAME
-				FROM employee
-                GROUP BY DEPT_CODE, SALARY) B ON (A.EMP_NAME = B.EMP_NAME);
+-- SELECT
+--         A.EMP_NAME,
+--         A.JOB_CODE,
+--         A.DEPT_CODE,
+--         A.SALARY
+--    FROM employee A
+--    LEFT JOIN (SELECT
+-- 					 SALARY,
+-- 					 DEPT_CODE,
+--                      EMP_NAME
+-- 				FROM employee
+--                 GROUP BY DEPT_CODE, SALARY) B ON (A.EMP_NAME = B.EMP_NAME);
                
                
-                  
-                  
-SELECT
-        A.EMP_NAME,
-        A.JOB_CODE,
-        A.DEPT_CODE,
-        A.SALARY
-   FROM employee A
-  WHERE A.SALARY = (SELECT
-                           MAX(SALARY)
- 				      FROM employee
-					 GROUP BY SALARY);
 
-                  
-SELECT
-       A.CATEGORY_NAME,
-       B.CATEGORY_NAME
-  FROM TBL_CATEGORY A
-  JOIN TBL_CATEGORY B ON A.REF_CATEGORY_CODE = B.CATEGORY_CODE  -- 같은 테이블 안에서 다른 컬럼으로도 JOIN가능
- WHERE A.REF_CATEGORY_CODE IS NOT NULL;
+-- SELECT
+--         A.EMP_NAME,
+--         A.JOB_CODE,
+--         A.DEPT_CODE,
+--         A.SALARY
+--    FROM employee A
+--   WHERE A.SALARY = (SELECT
+--                            MAX(SALARY)
+--  				      FROM employee
+-- 					 GROUP BY SALARY);
+
+--                   
+-- SELECT
+--        A.CATEGORY_NAME,
+--        B.CATEGORY_NAME
+--   FROM TBL_CATEGORY A
+--   JOIN TBL_CATEGORY B ON A.REF_CATEGORY_CODE = B.CATEGORY_CODE  -- 같은 테이블 안에서 다른 컬럼으로도 JOIN가능
+--  WHERE A.REF_CATEGORY_CODE IS NOT NULL;
 
 -- *** 여기서부터 난이도 극상
 
@@ -105,7 +104,7 @@ SELECT
 -- 사번, 이름, 부서명, 직급, '관리자' AS 구분 / '직원' AS 구분
 -- HINT!! is not null, union(혹은 then, else), distinct
 
--- !!!!!!!!!!!오류!!!!!!!!!!! 라고 풀지 말라고 했는데 다른 팀이 푸는 거 보니 나도 풀어야할 듯;;;
+
 
 -- 7. 자기 직급의 평균 급여를 받고 있는 직원의 사번, 이름, 직급코드, 급여를 조회하세요.
 -- 단, 급여와 급여 평균은 만원단위로 계산하세요.
@@ -130,12 +129,39 @@ SELECT
 
 -- 9. 급여 평균 3위 안에 드는 부서의 부서 코드와 부서명, 평균급여를 조회하세요.
 -- HINT!! limit
--- SELECT
---        DEPT_CODE,
---        DEPT_TITLE,
---        AVG(SALARY) avgSalary
---   FROM employee
-
+SELECT
+       A.DEPT_CODE,
+       B.DEPT_TITLE,
+       AVG(A.SALARY)
+  FROM employee A
+  JOIN (SELECT
+               DEPT_ID,
+               DEPT_TITLE
+		  FROM department) B ON (A.DEPT_CODE = B.DEPT_ID)
+ GROUP BY DEPT_CODE LIMIT 3;
  
-
 -- 10. 부서별 급여 합계가 전체 급여의 총 합의 20%보다 많은 부서의 부서명과, 부서별 급여 합계를 조회하세요.
+-- 메인쿼리
+SELECT
+       DEPT_TITLE,
+       SUM(SALARY)
+  FROM employee 
+ GROUP BY DEPT_CODE;
+ 
+-- 서브쿼리
+SELECT
+       SUM(SALARY) * 0.2 AS sumSalary
+  FROM employee; 
+  
+-- 답
+SELECT
+       B.DEPT_TITLE,
+       SUM(A.SALARY)
+  FROM employee A
+  JOIN (SELECT
+               DEPT_ID,
+               DEPT_TITLE
+		  FROM department) B ON (A.DEPT_CODE = B.DEPT_ID)
+ WHERE SALARY > (SELECT
+                        SUM(A.SALARY) * 0.2 AS sumSalary
+				   FROM employee);
