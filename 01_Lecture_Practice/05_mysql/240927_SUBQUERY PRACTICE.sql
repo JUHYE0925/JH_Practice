@@ -67,18 +67,82 @@ SELECT
 -- 6. 관리자에 해당하는 직원에 대한 정보와 관리자가 아닌 직원의 정보를 추출하여 조회하세요.
 -- 사번, 이름, 부서명, 직급, '관리자' AS 구분 / '직원' AS 구분
 -- HINT!! is not null, union(혹은 then, else), distinct
+START TRANSACTION;
 SELECT
-       A.EMP_ID,
-       A.EMP_NAME,
-       B.DEPT_TITLE,
-       
+       A.EMP_ID AS 사번,
+       A.EMP_NAME AS 이름,
+       B.DEPT_TITLE AS 부서명,
+       C.JOB_NAME AS 직급,
+       A.MANAGER_ID AS 구분
+  FROM employee A
+LEFT JOIN department B ON A.DEPT_CODE = B.DEPT_ID
+LEFT JOIN job C ON A.JOB_CODE = C.JOB_CODE
+WHERE A.MANAGER_ID = 200 OR
+       A.EMP_ID = 200
+UNION
+SELECT
+       A.EMP_ID AS 사번,
+       A.EMP_NAME AS 이름,
+       B.DEPT_TITLE AS 부서명,
+       C.JOB_NAME AS 직급,
+       A.MANAGER_ID AS 구분
+  FROM employee A
+LEFT JOIN department B ON A.DEPT_CODE = B.DEPT_ID
+LEFT JOIN job C ON A.JOB_CODE = C.JOB_CODE
+WHERE A.MANAGER_ID != 200 OR
+       A.MANAGER_ID IS NULL
+ORDER BY 구분 ASC;
 
+UPDATE employee
+SET MANAGER_ID = '직원'
+WHERE MANAGER_ID != '200' OR
+	  MANAGER_ID IS NULL;
+
+UPDATE employee
+SET MANAGER_ID = '관리자'
+WHERE MANAGER_ID = '200' OR
+	  EMP_ID = '200';
+
+ROLLBACK;
 
 
 -- 7. 자기 직급의 평균 급여를 받고 있는 직원의 사번, 이름, 직급코드, 급여를 조회하세요.
 -- 단, 급여와 급여 평균은 만원단위로 계산하세요.
 -- HINT!! round(컬럼명, -5)
 
+-- 애초에 평균이 안맞음.
+SELECT
+	   EMP_ID,
+       EMP_NAME,
+       JOB_CODE,
+       ROUND(SALARY, -5)
+  FROM employee
+WHERE JOB_CODE;
+
+-- 선동일, 윤은해만 나옴
+SELECT
+       EMP_ID,
+       EMP_NAME,
+       JOB_CODE,
+       ROUND(SALARY, -5) AS SALARY
+  FROM employee A
+ WHERE SALARY = (SELECT
+						  ROUND(AVG(SALARY), -5)
+				     FROM employee
+                     WHERE JOB_CODE = A.JOB_CODE);
+
+-- 선동일만 나옴
+SELECT
+       EMP_ID,
+       EMP_NAME,
+       JOB_CODE,
+       SALARY
+  FROM employee A
+ WHERE SALARY = (SELECT
+						  ROUND(AVG(SALARY), -5)
+				     FROM employee
+                     WHERE JOB_CODE = A.JOB_CODE);
+ 
 -- 8. 퇴사한 여직원과 같은 부서, 같은 직급에 해당하는 직원의 이름, 직급코드, 부서코드, 입사일을 조회하세요.
 SELECT
        EMP_NAME,
