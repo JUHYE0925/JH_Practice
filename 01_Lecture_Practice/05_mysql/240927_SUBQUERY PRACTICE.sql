@@ -77,8 +77,7 @@ SELECT
   FROM employee A
 LEFT JOIN department B ON A.DEPT_CODE = B.DEPT_ID
 LEFT JOIN job C ON A.JOB_CODE = C.JOB_CODE
-WHERE A.MANAGER_ID = 200 OR
-       A.EMP_ID = 200
+WHERE A.MANAGER_ID IS NULL
 UNION
 SELECT
        A.EMP_ID AS 사번,
@@ -89,19 +88,16 @@ SELECT
   FROM employee A
 LEFT JOIN department B ON A.DEPT_CODE = B.DEPT_ID
 LEFT JOIN job C ON A.JOB_CODE = C.JOB_CODE
-WHERE A.MANAGER_ID != 200 OR
-       A.MANAGER_ID IS NULL
+WHERE A.MANAGER_ID IS NOT NULL
 ORDER BY 구분 ASC;
 
 UPDATE employee
 SET MANAGER_ID = '직원'
-WHERE MANAGER_ID != '200' OR
-	  MANAGER_ID IS NULL;
+WHERE MANAGER_ID IS NOT NULL;
 
 UPDATE employee
 SET MANAGER_ID = '관리자'
-WHERE MANAGER_ID = '200' OR
-	  EMP_ID = '200';
+WHERE MANAGER_ID IS NULL;
 
 ROLLBACK;
 
@@ -112,36 +108,61 @@ ROLLBACK;
 
 -- 애초에 평균이 안맞음.
 SELECT
-	   EMP_ID,
-       EMP_NAME,
        JOB_CODE,
-       ROUND(SALARY, -5)
+       ROUND(AVG(SALARY), -5)
   FROM employee
-WHERE JOB_CODE;
+ GROUP BY JOB_CODE;
 
--- 선동일, 윤은해만 나옴
+-- 선동일, 윤은해 나옴
 SELECT
        EMP_ID,
        EMP_NAME,
        JOB_CODE,
-       ROUND(SALARY, -5) AS SALARY
+       ROUND(SALARY, -5)
   FROM employee A
  WHERE SALARY = (SELECT
-						  ROUND(AVG(SALARY), -5)
-				     FROM employee
-                     WHERE JOB_CODE = A.JOB_CODE);
+					    ROUND(AVG(SALARY), -5)
+				   FROM employee
+				  WHERE JOB_CODE = A.JOB_CODE);
+-- 선동일, 운은해, 장쯔위 나옴
+SELECT
+       EMP_ID,
+       EMP_NAME,
+       JOB_CODE,
+       ROUND(A.SALARY, -5)
+  FROM employee A
+ WHERE ROUND(A.SALARY, -5) = (SELECT
+					                 ROUND(AVG(SALARY), -5)
+							    FROM employee
+				               WHERE JOB_CODE = A.JOB_CODE);
 
--- 선동일만 나옴
+-- ANY 사용  ---> 선동일, 송은희, 윤은해, 전형돈 나옴
 SELECT
        EMP_ID,
        EMP_NAME,
        JOB_CODE,
        SALARY
   FROM employee A
- WHERE SALARY = (SELECT
+ WHERE SALARY = ANY(SELECT
 						  ROUND(AVG(SALARY), -5)
 				     FROM employee
-                     WHERE JOB_CODE = A.JOB_CODE);
+                     GROUP BY JOB_CODE);
+ 
+-- ANY 개념 이해를 위한 예제
+WITH TMP_TB AS (
+			SELECT 'J1' AS JOB_CODE, '이주형' AS NAME, 10 AS SALARY FROM DUAL
+            UNION SELECT 'J1' AS JOB_CODE, '김지혜' AS NAME, 20 AS SALARY FROM DUAL
+            UNION SELECT 'J1' AS JOB_CODE, '김주혜' AS NAME, 30 AS SALARY FROM DUAL
+            UNION SELECT 'J2' AS JOB_CODE, '김선혜' AS NAME, 20 AS SALARY FROM DUAL
+            UNION SELECT 'J2' AS JOB_CODE, '윤기남' AS NAME, 100 AS SALARY FROM DUAL
+       )
+SELECT *
+  FROM TMP_TB A
+ WHERE 1=1
+   -- AND A.SALARY = ANY(SELECT AVG(A_2.SALARY) FROM TMP_TB A_2 GROUP BY A_2.JOB_CODE)
+   -- AND A.SALARY IN (20, 60)
+    AND A.SALARY = ANY(SELECT AVG(A_2.SALARY) FROM TMP_TB A_2 WHERE A.JOB_CODE = A_2.JOB_CODE)
+;
  
 -- 8. 퇴사한 여직원과 같은 부서, 같은 직급에 해당하는 직원의 이름, 직급코드, 부서코드, 입사일을 조회하세요.
 SELECT
