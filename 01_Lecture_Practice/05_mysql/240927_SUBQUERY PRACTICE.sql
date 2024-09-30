@@ -118,23 +118,12 @@ SELECT
        EMP_ID,
        EMP_NAME,
        JOB_CODE,
-       ROUND(SALARY, -5)
+       SALARY
   FROM employee A
  WHERE SALARY = (SELECT
 					    ROUND(AVG(SALARY), -5)
 				   FROM employee
 				  WHERE JOB_CODE = A.JOB_CODE);
--- 선동일, 운은해, 장쯔위 나옴
-SELECT
-       EMP_ID,
-       EMP_NAME,
-       JOB_CODE,
-       ROUND(A.SALARY, -5)
-  FROM employee A
- WHERE ROUND(A.SALARY, -5) = (SELECT
-					                 ROUND(AVG(SALARY), -5)
-							    FROM employee
-				               WHERE JOB_CODE = A.JOB_CODE);
 
 -- ANY 사용  ---> 선동일, 송은희, 윤은해, 전형돈 나옴
 SELECT
@@ -147,6 +136,17 @@ SELECT
 						  ROUND(AVG(SALARY), -5)
 				     FROM employee
                      GROUP BY JOB_CODE);
+
+SELECT 
+       E.EMP_NAME
+     , E.JOB_CODE
+     , E.SALARY
+  FROM EMPLOYEE E
+ WHERE (E.JOB_CODE, E.SALARY) IN (SELECT E2.JOB_CODE
+                                       , ROUND(AVG(E2.SALARY), -5)
+                                    FROM EMPLOYEE E2
+                                   GROUP BY E2.JOB_CODE
+                                  );
  
 -- ANY 개념 이해를 위한 예제
 WITH TMP_TB AS (
