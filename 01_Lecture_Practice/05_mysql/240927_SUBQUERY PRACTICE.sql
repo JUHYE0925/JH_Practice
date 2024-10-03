@@ -118,25 +118,14 @@ SELECT
        EMP_ID,
        EMP_NAME,
        JOB_CODE,
-       SALARY
+	   SALARY
   FROM employee A
  WHERE SALARY = (SELECT
 					    ROUND(AVG(SALARY), -5)
 				   FROM employee
 				  WHERE JOB_CODE = A.JOB_CODE);
-
--- ANY 사용  ---> 선동일, 송은희, 윤은해, 전형돈 나옴
-SELECT
-       EMP_ID,
-       EMP_NAME,
-       JOB_CODE,
-       SALARY
-  FROM employee A
- WHERE SALARY = ANY(SELECT
-						  ROUND(AVG(SALARY), -5)
-				     FROM employee
-                     GROUP BY JOB_CODE);
-
+                     
+-- 선생님 답
 SELECT 
        E.EMP_NAME
      , E.JOB_CODE
@@ -148,6 +137,18 @@ SELECT
                                    GROUP BY E2.JOB_CODE
                                   );
  
+ -- ANY 사용  ---> 선동일, 송은희, 윤은해, 전형돈 나옴
+SELECT
+       EMP_ID,
+       EMP_NAME,
+       JOB_CODE,
+       SALARY
+  FROM employee A
+ WHERE SALARY = ANY(SELECT
+						  ROUND(AVG(SALARY), -5)
+				     FROM employee
+                     GROUP BY JOB_CODE);
+
 -- ANY 개념 이해를 위한 예제
 WITH TMP_TB AS (
 			SELECT 'J1' AS JOB_CODE, '이주형' AS NAME, 10 AS SALARY FROM DUAL
@@ -159,7 +160,7 @@ WITH TMP_TB AS (
 SELECT *
   FROM TMP_TB A
  WHERE 1=1
-   -- AND A.SALARY = ANY(SELECT AVG(A_2.SALARY) FROM TMP_TB A_2 GROUP BY A_2.JOB_CODE)
+    AND A.SALARY = ANY(SELECT AVG(A_2.SALARY) FROM TMP_TB A_2 GROUP BY A_2.JOB_CODE)
    -- AND A.SALARY IN (20, 60)
     AND A.SALARY = ANY(SELECT AVG(A_2.SALARY) FROM TMP_TB A_2 WHERE A.JOB_CODE = A_2.JOB_CODE)
 ;
