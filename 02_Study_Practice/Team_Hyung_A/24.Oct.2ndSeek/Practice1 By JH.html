@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice1</title>
+    <style>
+        .block {
+            display: inline-block;
+            margin-right : -10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>아래와 같은 레이아웃을 만들어부시오.</h3>
+
+    <div id="outer">
+        <div id="area1" class="block1 inline">
+            <div id="upblock" class="first"></div>
+            <div id="underblock" class="first">
+                <div id="left" class="under"></div>
+                <div id="right1" class="under"></div>
+                <div id="right2" class="under"></div>
+            </div>
+        </div>
+        <div id="area2" class="block inline"></div>
+        <div id="area3" class="block inline">
+            <div id="up" class="third"></div>
+            <div id="under" class="third"></div>
+        </div>
+    </div>
+
+    <script>
+        const $outer = document.getElementById("outer");
+        $outer.style.width = "820px";
+        $outer.style.height = "800px";
+
+        const $area1 = document.getElementById("area1");
+        $area1.style.width = "400px";
+
+        const $upblock = $area1.getElementById("upblock");
+        $upblock.style.height = "400px";
+        $upblock.style.backgroundColor = "yellow";
+        
+        const $area = document.getElementsByClassName("block");
+        [...$area].forEach($area => $area.style.width = "200px");
+        [...$area].forEach($area => $area.style.height = "600px");
+        [...$area].forEach($area => $area.style.border = "solid");
+        [...$area].forEach($area => $area.style.borderWidth = "5px");
+        [...$area].forEach($area => $area.style.borderColor = "black");
+        [...$area].forEach($area => $area.style.d = "black");
+
+
+
+            
+
+    </script>
+</body>
+</html>
