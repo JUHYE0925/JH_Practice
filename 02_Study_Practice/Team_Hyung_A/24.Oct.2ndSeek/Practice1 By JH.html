@@ -5,22 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice1</title>
     <style>
-        .block {
+        .inline {
             display: inline-block;
             margin-right : -10px;
+            vertical-align: top;
+        }
+
+        .under{
+            display : inline-block;
+            vertical-align: top;
+        }
+        
+        .right {
+            display : block;
+        }
+
+        .third {
+            display : block;
         }
     </style>
 </head>
 <body>
-    <h3>아래와 같은 레이아웃을 만들어부시오.</h3>
+    <h1>아래와 같은 레이아웃을 만드시오.</h1>
 
     <div id="outer">
         <div id="area1" class="block1 inline">
             <div id="upblock" class="first"></div>
             <div id="underblock" class="first">
                 <div id="left" class="under"></div>
-                <div id="right1" class="under"></div>
-                <div id="right2" class="under"></div>
+                <div id="right" class="under">
+                    <div id="right1" class="right"></div>
+                    <div id="right2" class="right"></div>
+                </div>
             </div>
         </div>
         <div id="area2" class="block inline"></div>
@@ -32,24 +48,77 @@
 
     <script>
         const $outer = document.getElementById("outer");
-        $outer.style.width = "820px";
+        $outer.style.width = "850px";
         $outer.style.height = "800px";
 
         const $area1 = document.getElementById("area1");
-        $area1.style.width = "400px";
+        $area1.style.width = "420px";
+        // $area1.style.border = "solid";
+        // $area1.style.borderWidth = "5px";
+        // $area1.style.borderColor = "black";
 
-        const $upblock = $area1.getElementById("upblock");
+        const $upblock = document.getElementById("upblock");
         $upblock.style.height = "400px";
         $upblock.style.backgroundColor = "yellow";
-        
+        $upblock.style.border = "solid";
+        $upblock.style.borderWidth = "5px";
+        $upblock.style.borderColor = "black";
+
+        const $left = document.getElementById("left");
+        $left.style.width = '200px';
+        $left.style.height = '395px';
+        $left.style.backgroundColor = 'blue';
+        $left.style.border = "solid";
+        $left.style.borderWidth = "5px";
+        $left.style.borderColor = "black";
+        $left.style.marginTop = "-6px";
+
+        const $right = document.getElementById("right");
+        $right.style.width = '200px';
+        $right.style.height = '400px';
+        $right.style.marginLeft = "-10px";
+        $right.style.marginTop = "-5px";
+        //$right.style.backgroundColor = 'black';
+
+        const $right1 = document.getElementById("right1");
+        $right1.style.width = '210px';
+        $right1.style.height = '200px';
+        $right1.style.backgroundColor = 'black';
+        $right1.style.border = "solid";
+        $right1.style.borderWidth = "5px";
+        $right1.style.borderColor = "black";
+        $right1.style.marginBottom = "-10px";
+
+        const $right2 = document.getElementById("right2");
+        $right2.style.width = '210px';
+        $right2.style.height = '200px';
+        $right2.style.backgroundColor = 'white';
+        $right2.style.border = "solid";
+        $right2.style.borderWidth = "5px";
+        $right2.style.borderColor = "black";
+        $right2.style.marginTop = "-15px";
+
         const $area = document.getElementsByClassName("block");
         [...$area].forEach($area => $area.style.width = "200px");
-        [...$area].forEach($area => $area.style.height = "600px");
+        [...$area].forEach($area => $area.style.height = "800px");
         [...$area].forEach($area => $area.style.border = "solid");
         [...$area].forEach($area => $area.style.borderWidth = "5px");
         [...$area].forEach($area => $area.style.borderColor = "black");
-        [...$area].forEach($area => $area.style.d = "black");
 
+        const $area2 = document.getElementById("area2");
+        $area2.style.backgroundColor = "blue";
+
+        const $area3 = document.getElementById("area3");
+        $area3.style.width = "200px";
+        $area3.style.height = "800px";
+
+        const $up = document.getElementById("up");
+        $up.style.backgroundColor = "white";
+        $up.style.height = "600px";
+
+        const $under = document.getElementById("under");
+        $under.style.backgroundColor = "black";
+        $under.style.height = "200px";
 
 
             
