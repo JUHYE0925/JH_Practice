@@ -6,55 +6,54 @@
     <title>Practice3</title>
 </head>
 <body>
-    <h1> 아래와 같이 버튼을 클릭하면 자동으로 랜덤 숫자를 뽑게되면 사용자가 해당 숫자가 홀수인지 짝수인지 입력하게하시오. <br>
-        만약 사용자의 입력값이 맞으면 정답이라는 안내문구가, 틀렸다면 오답이라는 안내 문구가 뜨게 하시오. </h1>
+    <h3> 아래와 같이 버튼을 클릭하면 자동으로 랜덤 숫자를 뽑게되면 사용자가 해당 숫자가 홀수인지 짝수인지 입력하게하시오. <br>
+        만약 사용자의 입력값이 맞으면 정답이라는 안내문구가, 틀렸다면 오답이라는 안내 문구가 뜨게 하시오. </h3>
 
-        <button id="btn">클릭!</button><br>
-        <input type="text" id="input" placeholder="홀수 or 짝수">
-        <button id="submit">확인</button>
+    <button id="btn">클릭!</button><br>
+    <input type="text" id="input" placeholder="홀수 or 짝수">
+    <button type="button" id="submitButton">확인</button>
 
-        <script>
-            let $btn = document.getElementById("btn");
-           
-            var random = function(){
-                let result = Math.floor(Math.random() * 100)
+    <script>
+        let $btn = document.getElementById("btn");
 
-                return result;
-            };
+        let inputAnswer = document.querySelector("input");
 
-            $btn.onclick = random;
+        let submitAnswer = document.getElementById("submitButton");
 
-            console.log(random());
+        let result;
 
-            let $check = document.getElementById("submit");
-
-            $check.onclick = function print(){
-
-                let input = document.querySelector('input[type=text]').value;
-                console.log(input);
-                console.log(random());/
-                
-                if(input == "홀수"){
-                    if(random() % 2 != 0 ){
-                       alert("홀수가 맞습니다.");
-                    } else {
-                        alert("홀수가 아닙니다.");
-                    }
-                } else if(input == "짝수") {
-                    if(random() % 2 == 0){
-                       alert("짝수가 아닙니다.");
-                    } else {
-                        alert("짝수가 맞습니다.");
-                    }
-                } else {
-                    alert("짝수와 홀수 중에서만 입력해주세요.");
-                };
-                 
-            };
+        function makeRandom (){
             
+            result = Math.floor(Math.random() * 100);
+            console.log(result);
+            return result;
 
+        };
 
-        </script>
+        $btn.addEventListener('click', makeRandom);
+
+        submitAnswer.addEventListener('click', function(){
+
+            if(result % 2 == 0){
+                if(inputAnswer.value == "짝수"){
+                    alert(result + "은 짝수가 맞습니다.")
+                } else if(inputAnswer.value == "홀수"){
+                    alert(result + "은 홀수가 아닙니다.")
+                } else {
+                    alert("짝수와 홀수 중에서 선택하여 입력해주세요.")
+                }
+            } else {
+                if(inputAnswer.value == "짝수"){
+                    alert(result + "은 짝수가 아닙니다.")
+                } else if(inputAnswer.value == "홀수"){
+                    alert(result + "은 홀수가 맞습니다.")
+                } else {
+                    alert("짝수와 홀수 중에서 선택하여 입력해주세요.")
+                };
+            };    
+        });     
+
+    </script>
 
 </body>
 </html>
