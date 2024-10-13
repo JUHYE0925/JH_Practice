@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice8</title>
+</head>
+<body>
+    <h3>
+        1. 10초 안에 문제를 풀도록 설정 <br>
+        2. 정답을 제출했을 때 맞으면 "정답입니다", 틀리면 "오답입니다" 출력 후 타이머 멈춤 <br>
+        3. 시간내에 정답을 제출하지 않을 경우 "문제를 풀지 못하였습니다" 출력 <br> 
+    </h3>
+
+    <div>문제 : 5 + 3은</div>
+    <label>정답 : <input type="number" id="answer"></label>
+    <button type="button" id="button">정답 제출</button>
+    <div id="timeCount">남은 시간 : <span id="timer"></span> 초</div> 
+
+    <script>
+        let answer = document.getElementById("answer");
+
+        let btn = document.getElementById("button");
+
+        let timer = document.getElementById("timer");
+        let timerCount = document.getElementById("timerCount");
+
+        btn.addEventListener("click", function(event){
+
+            if(answer.value == 8){
+                alert("정답입니다.")
+                clearInterval(timerStart);
+            }else {
+                alert("오답입니다.")
+                clearInterval(timerStart);
+            } 
+        });
+
+        let count = 10;
+            let timerStart = setInterval(() => {
+
+                timer.innerHTML = count--;
+
+                if(count == -1) {
+                    clearInterval(timerStart);
+
+                    alert("시간 내에 문제를 풀지 못하였습니다.");
+                }
+                
+
+            }, 1000);
+        
+
+
+    </script>
+
+
+</body>
+</html>

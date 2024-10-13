@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice5</title>
+</head>
+<body>
+    <h3>키워드 검색창을 만들고 아래에 라디오 버튼을 클릭하면 해당 사이트로 이동하도록 만드시오.</h3>
+    
+        <h6>가수 이름을 아래 검색창에서 검색해보실 수 있습니다.</h6>
+
+        <input id="searchSinger" type="text" name="query" placeholder="검색 키워드를 입력하세요">
+        <button type="button">검색</button>
+        <br>
+        <h6>가수의 노래를 듣고싶으면 버튼을 눌러주세요.</h6>
+        <input id="melon" type="radio">멜론</input>
+   
+
+    <script>
+        let inputSinger = document.getElementById("searchSinger");
+
+        let singerSubmit = document.querySelector("button");
+
+
+        singerSubmit.addEventListener("click", function(){
+
+            // event.preventDefault();
+
+            location.href = "https://search.naver.com/search.naver?query=" + inputSinger.value;
+        });
+
+        let melon = document.getElementById("melon");
+        melon.addEventListener("click", function(event){
+            location.href = "https://www.melon.com/search/total/index.htm?q=" + inputSinger.value;
+        });
+        
+
+        //https://www.melon.com/search/total/index.htm?q=
+        
+    </script>
+</body>
+</html>

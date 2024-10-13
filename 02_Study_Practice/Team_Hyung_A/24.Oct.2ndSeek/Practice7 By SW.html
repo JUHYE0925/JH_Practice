@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice7</title>
+</head>
+<body>
+    <h3>
+        1. 부모 요소와 자식 요소가 있는 HTML 구조를 만드세요. <br> 
+        2. 자식 요소를 클릭하면 "자식 요소 클릭됨" 메시지 출력 <br>
+        3. 부모 요소를 클릭하면 "부모 요소 클릭됨" 메시지 출력 <br> </h3>
+
+        <div id="parent"> 부모 요소 
+            <div id="child"> 자식 요소 </div>
+        </div>
+        
+
+        <script>
+            let parent = document.getElementById("parent");
+            parent.style.width = "500px";
+            parent.style.height = "120px";
+            parent.style.backgroundColor = "skyBlue";
+            parent.addEventListener("click", function(event){
+                //document.write("부모 요소 클릭됨");
+                alert("부모 요소 클릭됨");
+                //console.log("부모 요소 클릭됨");
+                //parent.innerHTML = "부모 요소 클릭됨";
+            });
+
+            let child = document.getElementById("child");
+            child.style.width = "300px";
+            child.style.height = "80px";
+            child.style.backgroundColor = "pink";
+            child.style.marginLeft = "50px";
+            child.addEventListener("click", function(event){
+                //document.write("자식 요소 클릭됨");
+                alert("자식 요소 클릭됨");
+                //console.log("자식 요소 클릭됨");
+                //child.innerHTML = "자식 요소 클릭됨";
+            
+            });
+
+
+        </script>
+</body>
+</html>

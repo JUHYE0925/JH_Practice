@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice6</title>
+</head>
+<body>
+    <h3>
+    1. 버튼이 두 개 있는 페이지를 만드세요. <br>
+    2. 각 버튼을 클릭할 때 마다 버튼의 클릭 횟수가 증가하도록 만드세요. <br>
+    3. 클릭 횟수를 화면에 실시간으로 업데이트하세요.<br></h3>
+
+    <button id="btn1">버튼1</button>
+
+    <button id="btn2">버튼2</button>
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        var count1 = 0;
+
+        let btn2 = document.getElementById("btn2");
+        var count2 = 0;
+
+        btn1.addEventListener("click", function(event){
+            count1++;
+            alert("버튼1을 " + count1 + "회 클릭하셨습니다.");
+        });
+
+        btn2.addEventListener("click", function(event){
+            count2++;
+            alert("버튼2를 " + count2 + "회 클릭하셨습니다.");
+        });
+    </script>
+</body>
+</html>

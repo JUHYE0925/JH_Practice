@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice9</title>
+</head>
+<body>
+    <h3>5초인 타이머를 만드세요.</h3>
+    <div id="timer"></div>
+    <button id="button" type="button">시작</button>
+    
+    <script>
+       let timer = document.getElementById("timer");
+        let start = document.getElementById("button");
+
+        start.addEventListener("click", function(event){
+
+            let count = 5;
+
+            let timerStart = setInterval(() => {
+                timer.innerHTML = count--;
+                if(count ==  -1) clearInterval(timerStart);
+            }, 1000)
+
+        });
+    </script>
+</body>
+</html>

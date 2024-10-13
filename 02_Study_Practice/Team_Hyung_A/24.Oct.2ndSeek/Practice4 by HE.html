@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice4</title>
+    <style>
+        #hello{
+            width: 130px;
+            height: 32px;
+            border : 1px solid gray;
+            text-align: center;
+            align-content: center;
+        }
+        #myName{
+            width: 160px;
+            height: 32px;
+            border : 1px solid gray;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>첫 번째 영역은 드래그 또는 더블 클릭해도 선택되지 않도록 하고 <br>
+        두 번째 영역은 복사 단축키를 사용하지 못하도록 만드시오.
+    </h3>
+
+    
+    <div id="hello"> | 1. 안녕하세요 |</div>
+    <br>
+    <div id="myName"> | 2. 김주혜 입니다. |</div>
+
+    <script>
+        const hello = document.querySelector("div");
+        hello.onmousedown = (e) => e.preventDefault();
+
+        const myName = document.getElementById("myName");
+        // myName.oncopy = (e) => e.preventDefault();
+        myName.addEventListener("copy", function(e){
+            e.preventDefault();
+        });
+        
+    </script>
+</body>
+</html>

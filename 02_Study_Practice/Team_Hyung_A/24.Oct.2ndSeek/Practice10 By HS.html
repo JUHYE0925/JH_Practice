@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice10</title>
+</head>
+<body>
+    <h3>입력한 값이 화면에 나오도록 하세요.</h3>
+
+    <div id="area"></div> <br>
+    <input id="inputKeyword" type="text" placeholder="키워드를 입력하세요.">
+    <button type="button" id="btn">확인</button>
+
+    <script>
+        let area = document.getElementById("area");
+        area.style.width = "300px";
+        area.style.height = "300px";
+        area.style.border = "1px, solid, black";
+        area.style.fontSize = "40px";
+        // display : table-cell :
+        // <td>요소를 사용한 일반적인 데이터를 저장하는 데이터 셀
+        // <td> 요소 내의 텍스트는 일반적인 두께의 폰트로 좌측 정렬 된다.
+        area.style.display = "table-cell";
+        area.style.verticalAlign = "middle";
+        area.style.textAlign = "center";
+        
+        let keyword = document.getElementById("inputKeyword");
+
+        let button = document.getElementById("btn");
+
+        button.addEventListener("click", function(event){
+            area.innerHTML = keyword.value;
+        })
+
+
+
+    </script>
+
+</body>
+</html>
