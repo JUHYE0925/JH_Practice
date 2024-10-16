@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice2</title>
+    <style>
+        #area {
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+        }
+
+        #btn {
+            width: 150px;
+            height: 70px;
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>클릭 버튼을 누르면 아래 사각형 안의 배경 색상이 랜덤으로 바뀌게 하시오.</h2> <br>
+    <div id="area"></div>
+    <br>
+    <button type="button" id="btn">클릭</button>
+
+    <script>
+
+        let area = document.getElementById("area");
+
+        let click = document.getElementById("btn");
+
+        let changeColor = document.getElementById("btn2");
+
+    
+
+        
+        click.addEventListener("click", function(event){
+
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+
+            console.log(red);
+            console.log(green);
+            console.log(blue);
+
+            area.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        
+                        
+        });
+
+    
+    </script>
+</body>
+</html>
