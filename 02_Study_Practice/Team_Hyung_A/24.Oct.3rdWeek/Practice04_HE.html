@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice4</title>
+</head>
+<body>
+    <h2>더블 클릭 버튼을 만들고 이벤트 헨들러 창이 뜨는 버튼과 창이 뜨지 않게 하는 버튼을 만드세요.</h2>
+
+    <button type="button" id="btn1">더블 클릭하세요.</button>
+    <br>
+    <br>
+    <button type="button" id="btn2">더블 클릭하세요.</button>
+
+    <script>
+        let button1 = document.getElementById("btn1");
+        let button2 = document.getElementById("btn2");
+
+        button1.onclick = (event) => {
+            alert("더블 클릭하였습니다.");
+        };
+    </script>
+</body>
+</html>

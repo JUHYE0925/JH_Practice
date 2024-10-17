@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice8</title>
+</head>
+<body>
+    <h2>가위바위보 게임을 만드시오.</h2>
+    <h3>유저에게 가위, 바위, 보 3가지 중 하나를 입력하도록 하고 랜덤으로 나온 가위바위보와 비교해 승 무 패를 알려주세요.</h3>
+
+    <input type="text" id="rsp" placeholder="가위, 바위, 보 중 입력해주세요.">
+    <button type="button" id="btn">가위바위보</button>
+
+    <script>
+        let rsp = document.getElementById("rsp");
+        let button = document.getElementById("btn");
+
+        let random = Math.floor(Math.random() * 3) + 1;
+        let rockScissorsPaper = "";
+
+        //if(random == 1){
+        //    rockScissorsPaper = "가위";
+        //} else if (random == 2){
+        //    rockScissorsPaper = "바위";
+        //} else {
+        //    rockScissorsPaper = "보";
+        //}
+
+        button.onclick = (e) => {
+
+            if(random == 1){
+                rockScissorsPaper = "가위";
+                if(rsp.value == "가위"){
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 무");
+                } else if(rsp.value == "바위"){
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 승");
+                } else {
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 패");
+                }
+            } else if (random == 2){
+                rockScissorsPaper = "바위";
+                if(rsp.value == "가위"){
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 패");
+                } else if(rsp.value == "바위"){
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 무");
+                } else {
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 승");
+                }
+            } else {
+                rockScissorsPaper = "보";
+                if(rsp.value == "가위"){
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 승");
+                } else if(rsp.value == "바위"){
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 페");
+                } else {
+                    alert("컴퓨터 : " + rockScissorsPaper + "\n유저 : " + rsp.value + "\n결과 : 무");
+                }
+            };
+
+        }
+    </script>
+</body>
+</html>

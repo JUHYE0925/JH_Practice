@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice5</title>
+</head>
+<body>
+    <h2>사용자가 텍스트 입력란에 키를 입력할 때 마다 현재 입력된 내용을 화면에 표시하는 
+        기능 구현</h2>
+
+        <input type="text" id="keyword">
+        <div id="area"></div>
+
+        <script>
+
+            let keyword = document.getElementById("keyword");
+            let area = document.getElementById("area");
+
+            keyword.addEventListener('keyup', function(event){
+                
+                area.innerHTML = keyword.value;
+                
+            });
+
+            
+        </script>
+</body>
+</html>

@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice6</title>
+    <style>
+        button{
+            width: 80px;
+            height: 50px;
+        }
+        p {
+            width: 50px;
+            margin-top: -5px;
+            height: 10px;
+        }
+        div {
+            width: 25px;
+            height: 10px;
+            margin-left: 40px;
+            margin-top: -21px;
+        }
+    </style>
 </head>
 <body>
     <h3>
@@ -11,25 +28,29 @@
     2. 각 버튼을 클릭할 때 마다 버튼의 클릭 횟수가 증가하도록 만드세요. <br>
     3. 클릭 횟수를 화면에 실시간으로 업데이트하세요.<br></h3>
 
-    <button id="btn1">버튼1</button>
+    <button id="btn1"><p>버튼1 : </p><div id="clickNum1" class="button"></div></button>
 
-    <button id="btn2">버튼2</button>
+    <button id="btn2"><p>버튼2 : </p><div id="clickNum2" class="button"></div></button>
 
     <script>
         let btn1 = document.getElementById("btn1");
+        let clickNum1 = document.getElementById("clickNum1");
         var count1 = 0;
 
         let btn2 = document.getElementById("btn2");
+        let clickNum2 = document.getElementById("clickNum2");
         var count2 = 0;
 
         btn1.addEventListener("click", function(event){
             count1++;
-            alert("버튼1을 " + count1 + "회 클릭하셨습니다.");
+            clickNum1.innerHTML = count1;
+            //alert("버튼1을 " + count1 + "회 클릭하셨습니다.");
         });
 
         btn2.addEventListener("click", function(event){
             count2++;
-            alert("버튼2를 " + count2 + "회 클릭하셨습니다.");
+            clickNum2.innerHTML = count2;
+            // alert("버튼2를 " + count2 + "회 클릭하셨습니다.");
         });
     </script>
 </body>

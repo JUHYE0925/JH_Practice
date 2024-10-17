@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice3</title>
+</head>
+<body>
+    <h2>키보드 키를 클릭했을 때 어떤 키가 나오는지 화면에 출력되기 만드시오.</h2>
+    <input type="text" id="inputKeyword">
+    <br>
+    <br>
+    <div class="area"></div>
+
+    <script>
+        let inputKeyword = document.getElementById("inputKeyword");
+        inputKeyword.style.width = "300px";
+        inputKeyword.style.height = "30px";
+
+        let area = document.querySelector(".area");
+        area.style.width = "500px";
+        area.style.minHeight = "100px";
+        area.style.backgroundColor = "lightgray";
+        area.style.border = "1px solid black";
+        area.style.resize = "none";
+        
+
+
+        inputKeyword.addEventListener("keydown", function(event){
+
+            area.insertAdjacentHTML('beforeend', 'keydown key=' + event.key + ", code = " + event.code + "<br>")
+        
+        });
+
+    
+        
+
+
+    </script>
+</body>
+</html>
