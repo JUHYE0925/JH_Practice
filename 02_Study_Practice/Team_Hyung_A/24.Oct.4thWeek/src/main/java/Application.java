@@ -35,8 +35,15 @@ public class Application {
 //        practice8.method8();
 
         // practice9
-        //Practice9_HS practice9 = new Practice9_HS();
-        //practice9.method9();
+        Practice9_HS practice9 = new Practice9_HS();
+        practice9.method9();
 
+        // practice10
+//        Practice10_SW practice10 = new Practice10_SW();
+//        practice10.method10();
+
+        // practice11
+//        Practice11_SW practice11 = new Practice11_SW();
+//        practice11.method11();
     }
 }
