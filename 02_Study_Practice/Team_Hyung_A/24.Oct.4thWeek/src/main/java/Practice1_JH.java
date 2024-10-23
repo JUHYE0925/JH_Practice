@@ -2,16 +2,11 @@ import java.util.Scanner;
 
 public class Practice1_JH {
 
-    public static void main(String[] args) {
 
-        /* 1부터 100까지 중 3의 배수이거나 7의 배수인 값을 출력하시오.
-        *  또한 출력된 배수들의 갯수도 구하시오. */
-
-        Practice1_JH practice1 = new Practice1_JH();
-        practice1.method1();
+    /* 1부터 100까지 중 3의 배수이거나 7의 배수인 값을 출력하시오.
+    *  또한 출력된 배수들의 갯수도 구하시오. */
 
 
-    }
 
     public void method1() {
 

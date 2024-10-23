@@ -1,16 +1,11 @@
 public class Practice2_JH {
 
-    public static void main(String[] args) {
 
-        /* 2. 반복문을 사용하여 1부터 1000까지 난수 발생 시키되 난수와 난수의 역순이 같은 경우만 출력되게 하시오.
-        *  ex) 난수 : 121 / 난수의 역순 : 121 ->  출력
-        *      난수 : 132 / 난수의 역순 : 231 -> 출력X
-        *  */
 
-        Practice2_JH practice2 = new Practice2_JH();
-        practice2.method2();
-
-    }
+    /* 2. 반복문을 사용하여 1부터 1000까지 난수 발생 시키되 난수와 난수의 역순이 같은 경우만 출력되게 하시오.
+    *  ex) 난수 : 121 / 난수의 역순 : 121 ->  출력
+    *      난수 : 132 / 난수의 역순 : 231 -> 출력X
+    *  */
 
     public void method2(){
 

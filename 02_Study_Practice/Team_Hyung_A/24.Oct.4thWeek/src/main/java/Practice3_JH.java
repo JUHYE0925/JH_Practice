@@ -2,14 +2,7 @@ import java.util.Scanner;
 
 public class Practice3_JH {
 
-    public static void main(String[] args) {
-
-        /* 3. 1부터 100까지의 난수를 발생시킨 뒤 up/down 게임을 진행하는 코드를 작성하시오. */
-
-        Practice3_JH practice3 = new Practice3_JH();
-        practice3.method3();
-
-    }
+    /* 3. 1부터 100까지의 난수를 발생시킨 뒤 up/down 게임을 진행하는 코드를 작성하시오. */
     
     public void method3(){
 
