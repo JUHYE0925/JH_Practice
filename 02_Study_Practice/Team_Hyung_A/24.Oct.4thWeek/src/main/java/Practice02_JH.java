@@ -1,4 +1,4 @@
-public class Practice2_JH {
+public class Practice02_JH {
 
 
 

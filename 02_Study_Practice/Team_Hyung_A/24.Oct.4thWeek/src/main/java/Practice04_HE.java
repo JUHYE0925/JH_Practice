@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practice4_HE {
+public class Practice04_HE {
 
     /* 문제 4
      *      숫자 한개를 입력받아 그 수가 짝수면 "입력하신 숫자는 짝수입니다!" 라고 출력하고,

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practice1_JH {
+public class Practice01_JH {
 
 
     /* 1부터 100까지 중 3의 배수이거나 7의 배수인 값을 출력하시오.

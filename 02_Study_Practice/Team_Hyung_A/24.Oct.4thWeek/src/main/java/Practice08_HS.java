@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practice8_HS {
+public class Practice08_HS {
 
     /*아래와 같이 나오도록 하세요. (반복문)*/
 

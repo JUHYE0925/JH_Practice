@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practice5_HE {
+public class Practice05_HE {
 
     /* 문제 2
      *      숫자 한개를 입력받아 양수면 " 입력하신 숫자는 양수입니다!" 라고 출력하고,

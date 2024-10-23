@@ -1,4 +1,4 @@
-public class Practice7_HS {
+public class Practice07_HS {
 
    /* 0~15 범위의 난수를 생성하고
     난수가 10이상일 경우 "당첨입니다." 10미만일 경우 "아쉽네요"를 반환하세요.*/

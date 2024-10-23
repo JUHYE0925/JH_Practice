@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practice9_HS {
+public class Practice09_HS {
 
     /* 트리를 만드세요. (반복문) →숫자 상관 없이 트리가 나올 수 있게 */
 

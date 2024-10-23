@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practice6_HE {
+public class Practice06_HE {
 
     /* 문제 3
      *      숫자 한개를 입력 받아 아래의 조건과 같이 출력하세요.
