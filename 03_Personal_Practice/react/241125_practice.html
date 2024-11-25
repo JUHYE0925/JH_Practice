@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 태그와 button을 만든 후 button을 클릭 시 input태그에 입력한 값이 화면에 list로 작성되는 것을 만드시오.
+    -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function List(){
+            const [texts, setText] = useState([
+                {id: 1, hello: '안녕하세요'}
+            ]);
+
+            const [inputText, setInputText] = useState('');
+            const [nextId, setNextId] = useState(2);
+
+            const textList = texts.map(text => <li key={text.id}>{text.hello}</li>);
+
+            const onChangeHandler = (e) => {
+                setInputText(e.target.value);
+            }
+
+            const onClickHandler = () => {
+                const updatedList = texts.concat({
+                    id: nextId,
+                    hello: inputText
+                })
+                
+                setNextId(nextId + 1);
+                setText(updatedList);
+                setInputText('');
+            }
+            
+            return(
+                <>
+                    <input type='text' value={inputText} onChange={onChangeHandler}/>
+                    <button onClick={onClickHandler}>클릭</button>
+                    <ul>{textList}</ul>
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<List/>);
+    </script>
+</body>
+</html>
