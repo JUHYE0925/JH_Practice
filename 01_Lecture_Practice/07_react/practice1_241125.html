@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Header
+        function HeaderArea(){
+
+            const headerStyle = {
+                height: 80,
+                backgroundColor: 'black',
+                color: 'white',
+                textAlign: 'center',
+                paddingTop: 40,
+                fontSize: 30
+            }
+
+            return (
+                <div style={headerStyle}>오늘 할 일! {new Date().toLocaleDateString()}</div>
+            )
+        }
+
+        // Footer
+        function FooterArea(){
+
+            const footerStyle = {
+                // marginTop: '205px',
+                height: 80,
+                backgroundColor: 'black',
+                color: 'white',
+                textAlign: 'center',
+                paddingTop: 60,
+                fontSize: 10
+            }
+
+            return(
+                <div style={footerStyle}>Copyright 2024. team-ohgiraffers all right reserve</div>
+            )
+        }
+
+        // Body
+        function BodyArea(){
+
+            const allBodyStyle = {
+                // position: 'absolute',
+                // top: 80,
+                backgroundColor : 'lightGray',
+                height: 735,
+                display: 'flex',
+                alignContent: 'center'
+            }
+
+            const textStyle = {
+                position: 'absolute',
+                left: 875,
+                fontSize : 30,
+                fontWeight: 800,
+                top: 230
+            }
+
+            const listAreaStyle = {
+                position: 'absolute',
+                top: 300,
+                left: 700,
+                width: 500,
+                height: 400,
+                border: 'solid 1px black',
+                backgroundColor: 'white'
+            }
+
+            const inputStyle = {
+                position: 'absolute',
+                left: 800,
+                top: 750,
+                width: 200
+            }
+
+            const buttonStyle = {
+                position: 'absolute',
+                top : 735,
+                left: 1030,
+                width: 100,
+                height: 50,
+                backgroundColor : 'green',
+                color: 'white',
+                border: 'none',
+                borderRadius : 10
+            }
+            
+            const xButtonStyle = {
+                width : 30,
+                backgroundColor : 'red',
+                borderRadius: 10,
+                color: 'white'
+            }
+
+            const [doLists, setDoLists] = useState([
+                {id: 1, do: "할 일 목록을 추가할 것", isDone: false}
+            ]);
+
+            const [nextId , setNextId] = useState(2);
+            const [inputText, setInputText] = useState('');
+            const [isLineThrough, setIsLineThrough] = useState(false);
+
+            const onChangeHandler = e => setInputText(e.target.value);
+
+            const onClickHandler = () => {
+                const registDoList = doLists.concat({
+                    id: nextId,
+                    do : inputText
+                })
+
+                setNextId(nextId + 1);
+                setDoLists(registDoList);
+                setInputText('');
+            }
+
+            const onRemove = id => {
+                const removeDoList = doLists.filter(doList => doList.id !== id);
+                setDoLists(removeDoList);
+            }
+
+            const onCheck = id => {
+                const updateDoList = doLists.map(doList => doList.id === id? {...doList, isDone: !doList.isDone} : doList);
+                setDoLists(updateDoList);
+            }
+
+            const toDoList = doLists.map(doList => <ol key={doList.id}>
+                                                        <label>
+                                                            <input type='checkBox' onClick={() => onCheck(doList.id)}/>
+                                                            <span style={{textDecoration: doList.isDone? 'line-through' : 'none'}}>{doList.do} </span>
+                                                            <font style={xButtonStyle} onClick={() => onRemove(doList.id)}>x</font>
+                                                        </label>
+                                                    </ol>
+                                        )
+
+            return(
+                <div style={allBodyStyle}>
+                    <p><font style={textStyle}>To Do List</font></p>
+                    <div style={listAreaStyle}>
+                        <ul>{toDoList}</ul>                          
+                    </div>
+                    <input style={inputStyle} onChange={onChangeHandler} value={inputText}/>
+                    <button style={buttonStyle} onClick={onClickHandler}>추가하기</button>
+                </div>
+            )
+        }
+
+        function TotalArea(){
+            return(
+                <>
+                    <HeaderArea/>
+                    <BodyArea/>
+                    <FooterArea/>
+                </>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<TotalArea/>);
+    </script>
+</body>
+</html>
