@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+        <!-- useState랑 useEffect 사용 -->
+    <script type="text/babel">
+
+        const { useState, useEffect } = React;
+
+        function App(){
+
+            const [inputText, setInputText] = useState('');
+
+            const [begin, setBegin] = useState(null);
+
+            // const [end, setEnd] = useState(null);
+        
+            // const [time, setTime] = useState('');
+
+            // const begin = new Date().getMilliseconds();
+            // const end = new Date().getMilliseconds();
+
+            const onInputHandler = (e) => {
+                // const beginTime = new Date().getTime();
+                setBegin(new Date().getTime());
+                console.log('시작', new Date().getTime())
+            }
+
+            const onChangeHandler = (e) => {
+                if(e.target.value == inputText){
+                    const endTime = new Date().getTime();
+                    console.log('종료', endTime)
+
+                    const performanceTime = Math.abs(endTime - begin);
+                    // console.log(performanceTime);
+
+                    alert(`${endTime} - ${begin} = ${performanceTime}(ms)`);
+                }
+            }
+
+            useEffect(() => {
+                const promptText = prompt('아무 문자열이나 입력하세요.');
+                setInputText(promptText);
+            },
+            [])
+
+            // useEffect(
+            //     () => alert(`실행 시간 : ${time}`) ,
+            //     [time]
+            // )
+
+            return (
+                <>
+                    <h1>{inputText}</h1>
+                    <input
+                        type='text'
+                        onFocus={onInputHandler}
+                        onChange={onChangeHandler}
+                    />
+                </>
+
+            )
+
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+    </script>
+</body>
+</html>
