@@ -39,9 +39,9 @@
                     const endTime = new Date().getTime();
                     console.log('종료', endTime)
 
-                    const performanceTime = Math.abs(endTime - begin);
+                    const performanceTime = endTime - begin;
                     // console.log(performanceTime);
-
+                    console.log(endTime + "-" + begin + "=" +  performanceTime + '(ms)');
                     alert(`${endTime} - ${begin} = ${performanceTime}(ms)`);
                 }
             }
