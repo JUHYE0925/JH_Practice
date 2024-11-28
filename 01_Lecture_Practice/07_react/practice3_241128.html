@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 날씨에 따른 이모지가 나오게 하시오  -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const API_KEY = 'fa9c838c38198c20b04505bd4a11bfb5';
+
+        const { useState, useEffect } = React;
+
+        // 날씨
+        function Weather(){
+
+            const [position, setPosition] = useState({});
+            const [city, setCity] = useState('');
+            const [weather, setWeather] = useState({});
+            const [wind, setWind] = useState({});
+            const [emojiUrl, setEmojiUrl] = useState('');
+
+            useEffect(
+                () => {
+                    new Promise((resolve, reject) => {
+                        navigator.geolocation.getCurrentPosition(currentPosition => {
+                            console.log('현재 위치 : ' , currentPosition);
+
+                            setPosition({
+                                longitude : currentPosition.coords.longitude,
+                                latitude : currentPosition.coords.latitude
+                            })
+
+                            resolve(currentPosition.coords);
+                        });
+                    }). then(coords => {
+                        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${API_KEY}`)
+                        .then(response => response.json())
+                        .then(json => {
+                            console.log(json);
+
+                            setCity(json.name);
+                            setWeather(json.weather[0]);
+                            setWind(json.wind);
+
+                         })
+                    })
+                }, []
+            )
+
+            useEffect(() => {
+                let emojiName = '';
+
+                switch(weather.main){
+                    case 'Snow': 
+                        emojiName = 'snowflake'; 
+                        break;
+                    case 'Rain': 
+                        emojiName = 'umbrella'; 
+                        break;
+                    case 'Cloud': 
+                        emojiName = 'cloud'; 
+                        break;
+                    default:
+                        emojiName = 'sunny';
+                        break; 
+                }
+
+                if (emojiName) {
+                    fetch('https://api.github.com/emojis')
+                        .then(res => res.json())
+                        .then(data => {
+                            setEmojiUrl(data[emojiName]);
+                        });
+                }
+            }, [weather]);
+
+            return(
+                <>
+                    <h1>현재 위치</h1>
+                    <h2>{`경도 : ${position.latitude}, 위도 : ${position.longitude}`}</h2>
+                    <h2>{`조회도시 : ${city}`}</h2>
+                    <h2>{`날씨 : ${weather.main}, 날씨 설명 : ${weather.description}`}</h2>
+                    <h2>{`풍향 : ${wind.deg}, 풍속 : ${wind.speed}`}</h2>
+                    <div> 
+                        {emojiUrl && <img src={emojiUrl} alt='날씨 아이콘'/>} 
+                    </div>
+
+                </>
+            )
+        }
+
+        function App(){
+
+            const [emojiUrl, setEmojiUrl] = useState('');
+
+            return (
+                <>
+                    <h1>오늘 날씨</h1>
+                    <Weather/>
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+    </script>
+</body>
+</html>
