@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- useState basic 연습 -->
+
+    <script type="text/babel">
+        
+        const { useState } = React;
+        
+        function App(){
+
+            const [colorName, setColorName] = useState('whole color');
+
+            const onClickBlue = (e) => {
+                setColorName('blue')
+            }
+
+            const onClickRed = (e) => {
+                setColorName('red')
+            }
+
+            const onClickPink = (e) => {
+                setColorName('pink')
+            }
+
+            const onClickGreen = (e) => {
+                setColorName('green')
+            }
+
+
+            return(
+                <>
+                    <h1>My favorite color is {colorName}!</h1>
+                    <button onClick={onClickBlue}>Blue</button>
+                    <button onClick={onClickRed}>Red</button>
+                    <button onClick={onClickPink}>Pink</button>
+                    <button onClick={onClickGreen}>Green</button>
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+    </script>
+</body>
+</html>

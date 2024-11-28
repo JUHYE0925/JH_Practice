@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <!-- useReducer basic practice -->
+    <!-- 금액을 입력한 후 예금을 누르면 잔액이 올라가고 출금을 누르면 잔액이 내려가도록 하시오 -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useReducer } = React;
+
+        function reducer(state, action){
+            
+            switch(action.type){
+                case 'deposit':
+                    return state + action.payload;
+                case 'withdrawal':
+                    return state - action.payload;    
+                default :
+                return state;    
+            }
+        }
+
+        function App(){
+            const [money, setMoney] = useState(0);
+            const [balance, dispatch] = useReducer(reducer, 0);
+
+            const onChangeHandler = (e) => {
+                setMoney(parseInt(e.target.value));
+            }
+
+            return(
+                <>
+                    <h1>useReducer 은행에 오신 것을 환영합니다.</h1>
+                    <h4>잔액 : {balance}</h4>
+                    <input
+                        type='number'
+                        step='1000'
+                        onChange={onChangeHandler}
+                        min='0'
+                    />
+                    <button onClick={() => dispatch({type: 'deposit', payload : money})}>예금</button>
+                    <button onClick={() => dispatch({type: 'withdrawal', payload : money})}>출금</button>
+                </>
+            );
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+    </script>
+</body>
+</html>
