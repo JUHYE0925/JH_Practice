@@ -14,14 +14,14 @@
     <script type="text/babel">
         const { useState, useReducer } = React;
 
-        function reducer(){
+        function reducer(state, action){
 
         }
 
         function App(){
             const [name, setName] = useState('');
             const [studentCount, setStudentCount] = useState(0);
-            const [state, dispatch] = useRecuder(reducer, 0);
+            const [state, dispatch] = useReducer(reducer, 0);
 
             const onChangeHandler = e => {
                 setName(e.target.value);
@@ -30,6 +30,7 @@
                 <>
                     <h1>출석부</h1>
                     <h3>총 학생 수 : {studentCount}</h3>
+                    <hr/>
                     <input
                         type='text'
                         onChange={onChangeHandler}
